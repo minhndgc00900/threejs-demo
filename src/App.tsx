@@ -1,7 +1,3 @@
-import { useRef, useEffect, Suspense } from 'react'
-import mapboxgl from 'mapbox-gl'
-
-import 'mapbox-gl/dist/mapbox-gl.css';
 import {
   createBrowserRouter,
   Navigate,
@@ -9,27 +5,9 @@ import {
 } from "react-router";
 import './App.css'
 import PageWrapper from './components/PageWrapper/PageWrapper';
+import { Suspense } from "react";
 
 function App() {
-
-
-  const mapRef = useRef<mapboxgl.Map | null>(null)
-  const mapContainerRef = useRef<HTMLDivElement | null>(null)
-
-  useEffect(() => {
-    mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN
-    if (mapContainerRef.current) {
-      mapRef.current = new mapboxgl.Map({
-        container: mapContainerRef.current,
-      });
-    }
-
-    return () => {
-      if (mapRef.current) {
-        mapRef.current.remove()
-      }
-    }
-  }, [])
 
   const router = createBrowserRouter([
     {
@@ -59,7 +37,6 @@ function App() {
 
   return (
     <>
-      {/* <div id='map-container' ref={mapContainerRef}/> */}
       <Suspense fallback={<div>Loading...</div>}>
         <RouterProvider router={router} />
       </Suspense>

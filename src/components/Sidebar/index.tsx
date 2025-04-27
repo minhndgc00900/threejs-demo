@@ -29,9 +29,9 @@ const Sidebar = () => {
         </div>
         <div className="flex flex-col flex-1 overflow-y-auto">
           <nav className="flex-1 px-2 py-4 bg-gray-800">
-            {menu.map((section) => {
+            {menu.map((section, index) => {
               return (
-                <Link
+                <Link key={index}
                   to={section.url}
                   className="flex items-center px-4 py-2 text-gray-100 hover:bg-gray-700 gap-x-2 gap-y-10"
                 >
