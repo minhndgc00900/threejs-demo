@@ -1,3 +1,25 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: MuseoSamsRounded;
+  src: url("/fonts/museo-sans-rounded/MuseoSansRounded300.otf");
+}
+
+@font-face {
+  font-family: MuseoSamsRounded500;
+  src: url("/fonts/museo-sans-rounded/MuseoSansRounded500.otf");
+}
+
+@font-face {
+  font-family: MuseoSamsRounded700;
+  src: url("/fonts/museo-sans-rounded/MuseoSansRounded700.otf");
+}
+
+@font-face {
+  font-family: MuseoSamsRounded900;
+  src: url("/fonts/museo-sans-rounded/MuseoSansRounded900.otf");
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -65,4 +87,10 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* Apply MuseoSamsRounded font to all text elements */
+a, h1, h2, h3, h4, h5, h6, div, button {
+  font-family: MuseoSamsRounded, sans-serif;
+  color: #000;
 }
