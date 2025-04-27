@@ -21,7 +21,12 @@ export default {
         }]
       },
       fontFamily: {
-        'museosamsrounded': ['MuseoSamsRounded', 'sans-serif'],
+        // montserrat: ['var(--font-montserrat)'],
+        // 'cafeteria-black': ['cafeteria-black'],
+        'museo-sams-rounded-300': ['MuseoSamsRounded'],
+        // 'museo-sams-rounded-500': ['MuseoSamsRounded500'],
+        // 'museo-sams-rounded-700': ['MuseoSamsRounded700'],
+        // 'museo-sams-rounded-900': ['MuseoSamsRounded900'],
       },
     },
   },
