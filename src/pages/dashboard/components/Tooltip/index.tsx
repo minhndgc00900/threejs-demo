@@ -1,0 +1,51 @@
+import { Factory } from "../../dashboard.type";
+import {
+  getBgColorByPollutionLevel,
+  getIconByPollutionLevel,
+  getTextByPollutionLevel,
+} from "../../utils";
+
+interface TooltipProps {
+  object: Factory;
+}
+
+const Tooltip: React.FC<TooltipProps> = ({ object }) => {
+  return (
+    <div className="min-w-[180px] text-[13px]">
+      <div className="font-bold text-[14px] mb-2">{object.name}</div>
+      <div className="w-full h-px my-2 bg-black"></div>
+      <div
+        className="flex justify-around items-center py-2 rounded-[4px]"
+        style={{
+          backgroundColor: getBgColorByPollutionLevel(
+            object.pollutionLevel || 0
+          ),
+        }}
+      >
+        {getIconByPollutionLevel(object.pollutionLevel || 0)}
+        <span className="font-museo-sams-rounded-900 text-[14px]">
+          {getTextByPollutionLevel(object.pollutionLevel || 0)}
+        </span>
+      </div>
+      <div className="flex flex-col gap-1">
+        {object.district && (
+          <div>
+            <strong>District:</strong> {object.district}
+          </div>
+        )}
+        {object.type && (
+          <div>
+            <strong>Type:</strong> {object.type}
+          </div>
+        )}
+        {object.workers !== undefined && (
+          <div>
+            <strong>Workers:</strong> {object.workers}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Tooltip;

@@ -94,3 +94,7 @@ a, h1, h2, h3, h4, h5, h6, div, button {
   font-family: MuseoSamsRounded, sans-serif;
   color: #000;
 }
+
+#deckgl-wrapper {
+  @apply !left-[50%] translate-x-[-50%] !w-[95%] !h-[100vh]
+}

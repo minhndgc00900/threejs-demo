@@ -1,8 +1,11 @@
 export interface Factory {
     id: string;
     name: string;
-    address: string;
+    type: string;
     longitude: number;
     latitude: number;
-    factoryType: string;
+    pollutionLevel: number;
+    workers: number;
+    district: string;
+    populationDensity: number;
   }
