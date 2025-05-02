@@ -8,4 +8,5 @@ export interface Factory {
     workers: number;
     district: string;
     populationDensity: number;
+    history: { date: Date; value: number }[];
   }

@@ -1,15 +1,20 @@
+import { useMemo } from "react";
 import { Factory } from "../../dashboard.type";
 import {
   getBgColorByPollutionLevel,
   getIconByPollutionLevel,
   getTextByPollutionLevel,
 } from "../../utils";
+import { generateCalendarHeatmapSVG } from "../../utils/calendarSvg";
 
 interface TooltipProps {
   object: Factory;
 }
 
 const Tooltip: React.FC<TooltipProps> = ({ object }) => {
+  // const pmData = useMemo(() => generatePM25Data('2024-01-01', '2024-12-31'), []);
+  const svgMarkup = useMemo(() => generateCalendarHeatmapSVG(object.history), [object]);
+
   return (
     <div className="min-w-[180px] text-[13px]">
       <div className="font-bold text-[14px] mb-2">{object.name}</div>
@@ -27,7 +32,7 @@ const Tooltip: React.FC<TooltipProps> = ({ object }) => {
           {getTextByPollutionLevel(object.pollutionLevel || 0)}
         </span>
       </div>
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-1 pt-2">
         {object.district && (
           <div>
             <strong>District:</strong> {object.district}
@@ -44,6 +49,7 @@ const Tooltip: React.FC<TooltipProps> = ({ object }) => {
           </div>
         )}
       </div>
+      <div style={{ marginTop: '8px' }} dangerouslySetInnerHTML={{ __html: svgMarkup }} />
     </div>
   );
 };

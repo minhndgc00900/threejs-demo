@@ -61,7 +61,7 @@ const Factory3DMap: React.FC<Factory3DMapProps> = ({ factories }) => {
         padding: "8px",
         borderRadius: "6px",
         boxShadow: "0px 2px 10px rgba(0,0,0,0.15)",
-        maxWidth: "250px",
+        maxWidth: "290px",
       },
     };
   }, []);
@@ -79,7 +79,7 @@ const Factory3DMap: React.FC<Factory3DMapProps> = ({ factories }) => {
         mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
         initialViewState={viewState}
         style={{ width: 1366, height: 768 }}
-        mapStyle="mapbox://styles/mapbox/dark-v11"
+        mapStyle="mapbox://styles/mapbox/light-v11"
       />
     </DeckGL>
   );

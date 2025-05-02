@@ -1,4 +1,14 @@
 import { Factory } from "./dashboard.type";
+import * as d3 from 'd3';
+
+const today = new Date();
+const startDate = d3.timeMonth.offset(today, -11); // 12 months ago (inclusive)
+
+// Generate one entry per day from startDate to today
+const data = d3.timeDays(startDate, today).map(date => ({
+  date,
+  value: Math.floor(Math.random() * 100), // replace with your logic
+}));
 
 export const factories: Factory[] = [
   // Bac Ninh
@@ -11,6 +21,7 @@ export const factories: Factory[] = [
     pollutionLevel: 45,
     workers: 6000,
     district: 'Bac Ninh',
+    history: data,
     populationDensity: 1400,
   },
   {
@@ -22,6 +33,7 @@ export const factories: Factory[] = [
     pollutionLevel: 50,
     workers: 3000,
     district: 'Bac Ninh',
+    history: data,
     populationDensity: 1400,
   },
   {
@@ -33,6 +45,7 @@ export const factories: Factory[] = [
     pollutionLevel: 15,
     workers: 800,
     district: 'Bac Ninh',
+    history: data,
     populationDensity: 1400,
   },
 
@@ -46,6 +59,7 @@ export const factories: Factory[] = [
     pollutionLevel: 30,
     workers: 800,
     district: 'Dong Anh',
+    history: data,
     populationDensity: 820,
   },
   {
@@ -57,6 +71,7 @@ export const factories: Factory[] = [
     pollutionLevel: 38,
     workers: 400,
     district: 'Dong Anh',
+    history: data,
     populationDensity: 700,
   },
   {
@@ -68,6 +83,7 @@ export const factories: Factory[] = [
     pollutionLevel: 55,
     workers: 500,
     district: 'Dong Anh',
+    history: data,
     populationDensity: 1200,
   },
 
@@ -81,6 +97,7 @@ export const factories: Factory[] = [
     pollutionLevel: 13,
     workers: 5000,
     district: 'Hai Phong',
+    history: data,
     populationDensity: 1100,
   },
   {
@@ -92,6 +109,7 @@ export const factories: Factory[] = [
     pollutionLevel: 344,
     workers: 2000,
     district: 'Hai Phong',
+    history: data,
     populationDensity: 1300,
   },
 
@@ -105,6 +123,7 @@ export const factories: Factory[] = [
     pollutionLevel: 23,
     workers: 7000,
     district: 'Thai Nguyen',
+    history: data,
     populationDensity: 800,
   },
   {
@@ -116,6 +135,7 @@ export const factories: Factory[] = [
     pollutionLevel: 42,
     workers: 1200,
     district: 'Thai Nguyen',
+    history: data,
     populationDensity: 800,
   },
 
@@ -129,6 +149,7 @@ export const factories: Factory[] = [
     pollutionLevel: 33,
     workers: 4500,
     district: 'Vinh Phuc',
+    history: data,
     populationDensity: 900,
   },
   {
@@ -140,6 +161,7 @@ export const factories: Factory[] = [
     pollutionLevel: 11,
     workers: 3000,
     district: 'Vinh Phuc',
+    history: data,
     populationDensity: 900,
   },
 
@@ -153,6 +175,7 @@ export const factories: Factory[] = [
     pollutionLevel: 14,
     workers: 4000,
     district: 'Hung Yen',
+    history: data,
     populationDensity: 1120,
   },
   {
@@ -164,6 +187,7 @@ export const factories: Factory[] = [
     pollutionLevel: 58,
     workers: 1000,
     district: 'Hung Yen',
+    history: data,
     populationDensity: 1100,
   },
 ];
