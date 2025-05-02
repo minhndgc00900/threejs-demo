@@ -1,5 +1,6 @@
 // utils/generateCalendarHeatmap.ts
 import * as d3 from 'd3';
+import { Color } from '../../../utils/colors';
 
 type Point = { date: Date; value: number };
 
@@ -14,11 +15,11 @@ export function generateCalendarHeatmapSVG(data: Point[]): string {
     const yearStart = d3.timeMonth.floor(d3.timeMonth.offset(lastDate, -11));
 
     const color = d3.scaleThreshold<number, string>()
-        .domain([19, 39, 100]) // thresholds for PM2.5 (example: good, moderate, unhealthy, very unhealthy)
+        .domain([19, 39, 100]) // thresholds for PM2.5
         .range([
-            '#00B894', // Good (0-12)
-            '#FDCB6E', // Moderate (12-35)
-            '#FF4C4C'  // Very unhealthy (100+)
+            Color.GOOD,          // Good (0-19)
+            Color.MODERATE,      // Moderate (19-39)
+            Color.VERY_UNHEALTHY // Very unhealthy (39-100)
         ]);
 
     const formatDate = d3.timeFormat('%Y-%m-%d');
@@ -67,7 +68,7 @@ export function generateCalendarHeatmapSVG(data: Point[]): string {
         .attr('width', cellSize - 1)
         .attr('height', cellSize - 1)
         .attr('x', d => (d.date.getDate() - 1) * cellSize)
-        .attr('fill', d => d.value === 0 ? '#D0D0D0' : color(d.value)) // <-- this line
+        .attr('fill', d => d.value === 0 ? Color.NO_DATA : color(d.value))
         .append('title')
         .text(d => `${formatDate(d.date)}: ${d.value}`);
 

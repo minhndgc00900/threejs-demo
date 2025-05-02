@@ -1,6 +1,7 @@
 import Moderate from "../../../components/Icon/assets/Moderate";
 import Sad from "../../../components/Icon/assets/Sad";
 import Smile from "../../../components/Icon/assets/Smile";
+import { Color } from "../../../utils/colors";
 
 export const getPollutionLevel = (density: number) => {
   if (density < 20) return "low";
@@ -26,9 +27,9 @@ export const getColorByPollution = (
 };
 
 export const getBgColorByPollutionLevel = (pollutionLevel: number): string => {
-  if (pollutionLevel < 20) return "#00B894"; // Low - Green
-  if (pollutionLevel < 40) return "#FDCB6E"; // Medium - Yellow
-  return "#FF4C4C"; // Very low - Teal
+  if (pollutionLevel < 20) return Color.GOOD; // Low - Green
+  if (pollutionLevel < 40) return Color.MODERATE; // Medium - Yellow
+  return Color.VERY_UNHEALTHY; // Very low - Teal
 };
 
 export const getIconByPollutionLevel = (pollutionLevel: number) => {

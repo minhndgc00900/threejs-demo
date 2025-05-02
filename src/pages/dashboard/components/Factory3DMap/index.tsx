@@ -79,7 +79,7 @@ const Factory3DMap: React.FC<Factory3DMapProps> = ({ factories }) => {
         mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
         initialViewState={viewState}
         style={{ width: 1366, height: 768 }}
-        mapStyle="mapbox://styles/mapbox/light-v11"
+        mapStyle="mapbox://styles/mapbox/outdoors-v12"
       />
     </DeckGL>
   );

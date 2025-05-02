@@ -1,0 +1,8 @@
+export enum Color {
+  NO_DATA = '#D0D0D0',
+  GOOD = '#00B894',
+  MODERATE = '#FDCB6E',
+  UNHEALTHY_SENSITIVE = '#f29e00',
+  UNHEALTHY = '#f23d00',
+  VERY_UNHEALTHY = '#FF4C4C'
+} 
