@@ -7,6 +7,9 @@ export default {
   content: [],
   theme: {
     extend: {
+      backgroundColor:{
+        'fog': '#f6f9f7',
+      },
       screens: {
         'xs': '480px',
         '2xl': '1536px',

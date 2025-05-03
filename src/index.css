@@ -29,6 +29,12 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
+  /* Common colors */
+  --color-fog: #f6f9f7;
+  --color-white: #ffffff;
+  --color-shadow: rgba(0, 0, 0, 0.6);
+  --color-border: #ffffff;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -100,5 +106,5 @@ a, h1, h2, h3, h4, h5, h6, div, button {
 }
 
 .section-container {
-  @apply relative w-[472px] h-[474px] bg-[#f6f9f7] border min-w-[100px] shadow-[0_1px_3px_rgba(0,0,0,0.6)] rounded-[5px] border-solid border-[white];
+  @apply relative w-[472px] h-[474px] bg-[var(--color-fog)] border min-w-[100px] shadow-[0_1px_3px_var(--color-shadow)] rounded-[5px] border-solid border-[var(--color-border)];
 }

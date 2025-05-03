@@ -12,7 +12,7 @@ const Details = () => {
   );
 
   return (
-    <div className="flex gap-6 justify-center">
+    <div className="flex gap-6 justify-center mt-2">
       {factory && (
         <>
           <FactoryStatus factory={factory} />
