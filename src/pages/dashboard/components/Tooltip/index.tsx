@@ -6,6 +6,7 @@ import {
   getTextByPollutionLevel,
 } from "../../utils";
 import { generateCalendarHeatmapSVG } from "../../utils/calendarSvg";
+import { useNavigate } from "react-router";
 
 interface TooltipProps {
   object: Factory;
@@ -17,6 +18,8 @@ const Tooltip: React.FC<TooltipProps> = ({ object }) => {
     () => generateCalendarHeatmapSVG(object.history),
     [object]
   );
+
+  const navigate = useNavigate();
 
   return (
     <div className="min-w-[180px] text-[13px]">
@@ -55,10 +58,7 @@ const Tooltip: React.FC<TooltipProps> = ({ object }) => {
       <div
         className="border bg-[#eee] whitespace-normal px-0 py-[3px] rounded-[3px] border-solid border-[#888] text-center cursor-pointer"
         onClick={() => {
-          window.open(
-            `https://3d.google.com/u/0/models/3d-content/furniture/20220120/dining_table_01/model?hl=en&model=Dining_Table_01&authuser=0&project=furniture-20220120`,
-            "_blank"
-          );
+          navigate(`/details/${object.id}`);
         }}
       >
         View details

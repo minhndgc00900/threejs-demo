@@ -2,12 +2,12 @@ import DeckGL, { ColumnLayer, MapViewState, PickingInfo } from "deck.gl";
 import { useCallback, useState, useEffect } from "react";
 import { Map, ViewStateChangeEvent } from "react-map-gl/mapbox";
 import { MAPBOX_ACCESS_TOKEN } from "../../../../utils/constant";
-import type { Factory } from "../../dashboard.type";
-import Tooltip from "../Tooltip";
 import { getColorByPollution } from "../../../../utils/common";
+import { Factory } from "../../../dashboard/dashboard.type";
+// import Tooltip from "../../../dashboard/components/Tooltip";
 
 interface Factory3DMapProps {
-  factories: Factory[];
+  factory: Factory;
 }
 
 const INITIAL_VIEW_STATE: MapViewState = {
@@ -18,10 +18,13 @@ const INITIAL_VIEW_STATE: MapViewState = {
   bearing: 0,
 };
 
-export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factories }) => {
+export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factory }) => {
   const [viewState] = useState(INITIAL_VIEW_STATE);
   const [hoverInfo, setHoverInfo] = useState<PickingInfo<Factory> | null>(null);
-  const [initialPosition, setInitialPosition] = useState<{ x: number; y: number } | null>(null);
+  const [initialPosition, setInitialPosition] = useState<{
+    x: number;
+    y: number;
+  } | null>(null);
 
   const onMove = useCallback(({ viewState }: ViewStateChangeEvent) => {
     console.log("viewState", viewState);
@@ -30,7 +33,7 @@ export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factories }) => {
   const layers = [
     new ColumnLayer<Factory>({
       id: "column-layer",
-      data: factories,
+      data: [factory],
       diskResolution: 12,
       radius: 700,
       extruded: true,
@@ -44,8 +47,8 @@ export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factories }) => {
           setHoverInfo(info);
         } else {
           // Check if mouse is over the tooltip
-          const tooltip = document.getElementById('custom-tooltip');
-          if (!tooltip?.matches(':hover')) {
+          const tooltip = document.getElementById("custom-tooltip");
+          if (!tooltip?.matches(":hover")) {
             setHoverInfo(null);
             setInitialPosition(null);
           }
@@ -58,27 +61,27 @@ export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factories }) => {
     if (hoverInfo && !initialPosition) {
       setInitialPosition({
         x: hoverInfo.x,
-        y: hoverInfo.y
+        y: hoverInfo.y,
       });
     }
   }, [hoverInfo, initialPosition]);
 
   return (
-    <DeckGL
-      initialViewState={INITIAL_VIEW_STATE}
-      layers={layers}
-      controller={true}
-      style={{ height: '100vh', width: '95%' }}
-    >
-      <Map
-        {...viewState}
-        onMove={onMove}
-        mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
-        initialViewState={viewState}
-        style={{ width: 1366, height: 768 }}
-        mapStyle="mapbox://styles/mapbox/outdoors-v12"
-      />
-      {hoverInfo?.object && (
+    <div className="section-container">
+      <DeckGL
+        initialViewState={INITIAL_VIEW_STATE}
+        layers={layers}
+        controller={true}
+        style={{ width: '472px', height: '360px' }}
+      >
+        <Map
+          {...viewState}
+          onMove={onMove}
+          mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
+          initialViewState={viewState}
+          mapStyle="mapbox://styles/mapbox/outdoors-v12"
+        />
+        {/* {hoverInfo?.object && (
         <div 
           id="custom-tooltip"
           style={{ 
@@ -93,8 +96,9 @@ export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factories }) => {
         >
           <Tooltip object={hoverInfo.object} />
         </div>
-      )}
-    </DeckGL>
+      )} */}
+      </DeckGL>
+    </div>
   );
 };
 

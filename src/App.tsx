@@ -31,6 +31,13 @@ function App() {
             return { Component: module.default };
           }
         },
+        {
+          path: 'details/:id',
+          lazy: async () => {
+            const module = await import('./pages/details');
+            return { Component: module.default };
+          }
+        },
       ],
     },
   ]);

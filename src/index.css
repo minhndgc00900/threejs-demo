@@ -96,5 +96,9 @@ a, h1, h2, h3, h4, h5, h6, div, button {
 }
 
 #deckgl-wrapper {
-  @apply !left-[50%] translate-x-[-50%] !w-[95%] !h-[100vh]
+  @apply !left-[50%] translate-x-[-50%] w-[95%] h-[100vh]
+}
+
+.section-container {
+  @apply relative w-[472px] h-[474px] bg-[#f6f9f7] border min-w-[100px] shadow-[0_1px_3px_rgba(0,0,0,0.6)] rounded-[5px] border-solid border-[white];
 }

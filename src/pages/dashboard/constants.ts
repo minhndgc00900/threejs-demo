@@ -13,7 +13,7 @@ const data = d3.timeDays(startDate, today).map(date => ({
 export const factories: Factory[] = [
   // Bac Ninh
   {
-    id: 'f1',
+    id: 'samsung-electronics-vietnam',
     name: 'Samsung Electronics Vietnam',
     type: 'Electronics',
     latitude: 21.1193,
@@ -25,7 +25,7 @@ export const factories: Factory[] = [
     populationDensity: 1400,
   },
   {
-    id: 'f2',
+    id: 'foxconn-factory-bac-ninh',
     name: 'Foxconn Factory Bac Ninh',
     type: 'Electronics',
     latitude: 21.1000,
@@ -37,7 +37,7 @@ export const factories: Factory[] = [
     populationDensity: 1400,
   },
   {
-    id: 'f3',
+    id: 'bac-ninh-textile-company',
     name: 'Bac Ninh Textile Company',
     type: 'Textile',
     latitude: 21.0833,
@@ -51,7 +51,7 @@ export const factories: Factory[] = [
 
   // Dong Anh
   {
-    id: 'f4',
+    id: 'dong-anh-textile-co',
     name: 'Dong Anh Textile Co.',
     type: 'Textile',
     latitude: 21.1425,
@@ -63,7 +63,7 @@ export const factories: Factory[] = [
     populationDensity: 820,
   },
   {
-    id: 'f5',
+    id: 'dong-anh-chemical-plant',
     name: 'Dong Anh Chemical Plant',
     type: 'Chemical',
     latitude: 21.1500,
@@ -75,7 +75,7 @@ export const factories: Factory[] = [
     populationDensity: 700,
   },
   {
-    id: 'f6',
+    id: 'dong-anh-food-processing-plant',
     name: 'Vietnam Food Processing Plant (Dong Anh)',
     type: 'Food Processing',
     latitude: 21.1300,
@@ -89,7 +89,7 @@ export const factories: Factory[] = [
 
   // Hai Phong
   {
-    id: 'f7',
+    id: 'lg-display-hai-phong',
     name: 'LG Display Hai Phong',
     type: 'Electronics',
     latitude: 20.8449,
@@ -101,7 +101,7 @@ export const factories: Factory[] = [
     populationDensity: 1100,
   },
   {
-    id: 'f8',
+    id: 'vinfast-manufacturing-plant',
     name: 'VinFast Manufacturing Plant',
     type: 'Automotive',
     latitude: 20.7951,
@@ -115,7 +115,7 @@ export const factories: Factory[] = [
 
   // Thai Nguyen
   {
-    id: 'f9',
+    id: 'samsung-electronics-thai-nguyen',
     name: 'Samsung Electronics Thai Nguyen',
     type: 'Electronics',
     latitude: 21.5928,
@@ -127,7 +127,7 @@ export const factories: Factory[] = [
     populationDensity: 800,
   },
   {
-    id: 'f10',
+    id: 'thai-nguyen-steel-plant',
     name: 'Thai Nguyen Steel Plant',
     type: 'Construction Materials',
     latitude: 21.5881,
@@ -141,7 +141,7 @@ export const factories: Factory[] = [
 
   // Vinh Phuc
   {
-    id: 'f11',
+    id: 'honda-vietnam-motorcycle-plant',
     name: 'Honda Vietnam Motorcycle Plant',
     type: 'Automotive',
     latitude: 21.3082,
@@ -153,7 +153,7 @@ export const factories: Factory[] = [
     populationDensity: 900,
   },
   {
-    id: 'f12',
+    id: 'toyota-vietnam-assembly-plant',
     name: 'Toyota Vietnam Assembly Plant',
     type: 'Automotive',
     latitude: 21.3080,
@@ -167,7 +167,7 @@ export const factories: Factory[] = [
 
   // Hung Yen
   {
-    id: 'f13',
+    id: 'canon-vietnam-factory',
     name: 'Canon Vietnam Factory',
     type: 'Electronics',
     latitude: 20.9101,
@@ -179,7 +179,7 @@ export const factories: Factory[] = [
     populationDensity: 1120,
   },
   {
-    id: 'f14',
+    id: 'hung-yen-textile-garment',
     name: 'Hung Yen Textile & Garment',
     type: 'Textile',
     latitude: 20.9210,
