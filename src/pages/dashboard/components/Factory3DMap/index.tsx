@@ -1,6 +1,5 @@
 import DeckGL, { ColumnLayer, MapViewState, PickingInfo } from "deck.gl";
-import { useCallback, useState } from "react";
-import { renderToStaticMarkup } from "react-dom/server";
+import { useCallback, useState, useEffect } from "react";
 import { Map, ViewStateChangeEvent } from "react-map-gl/mapbox";
 import { MAPBOX_ACCESS_TOKEN } from "../../../../utils/constant";
 import type { Factory } from "../../dashboard.type";
@@ -19,11 +18,10 @@ const INITIAL_VIEW_STATE: MapViewState = {
   bearing: 0,
 };
 
-const Factory3DMap: React.FC<Factory3DMapProps> = ({ factories }) => {
-  const [
-    viewState,
-    // setViewState
-  ] = useState(INITIAL_VIEW_STATE);
+export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factories }) => {
+  const [viewState] = useState(INITIAL_VIEW_STATE);
+  const [hoverInfo, setHoverInfo] = useState<PickingInfo<Factory> | null>(null);
+  const [initialPosition, setInitialPosition] = useState<{ x: number; y: number } | null>(null);
 
   const onMove = useCallback(({ viewState }: ViewStateChangeEvent) => {
     console.log("viewState", viewState);
@@ -43,35 +41,33 @@ const Factory3DMap: React.FC<Factory3DMapProps> = ({ factories }) => {
       pickable: true,
       onHover: (info) => {
         if (info.object) {
-          console.log("Hovered:", info.object);
+          setHoverInfo(info);
+        } else {
+          // Check if mouse is over the tooltip
+          const tooltip = document.getElementById('custom-tooltip');
+          if (!tooltip?.matches(':hover')) {
+            setHoverInfo(null);
+            setInitialPosition(null);
+          }
         }
       },
     }),
   ];
 
-  // Callback to populate the default tooltip with content
-  const getTooltip = useCallback(({ object }: PickingInfo<Factory>) => {
-    if (!object) return null;
-
-    return {
-      html: renderToStaticMarkup(<Tooltip object={object} />),
-      style: {
-        backgroundColor: "rgba(255, 255, 255, 0.95)",
-        color: "#333",
-        padding: "8px",
-        borderRadius: "6px",
-        boxShadow: "0px 2px 10px rgba(0,0,0,0.15)",
-        maxWidth: "290px",
-      },
-    };
-  }, []);
+  useEffect(() => {
+    if (hoverInfo && !initialPosition) {
+      setInitialPosition({
+        x: hoverInfo.x,
+        y: hoverInfo.y
+      });
+    }
+  }, [hoverInfo, initialPosition]);
 
   return (
     <DeckGL
       initialViewState={INITIAL_VIEW_STATE}
       layers={layers}
       controller={true}
-      getTooltip={getTooltip}
     >
       <Map
         {...viewState}
@@ -81,6 +77,22 @@ const Factory3DMap: React.FC<Factory3DMapProps> = ({ factories }) => {
         style={{ width: 1366, height: 768 }}
         mapStyle="mapbox://styles/mapbox/outdoors-v12"
       />
+      {hoverInfo?.object && (
+        <div 
+          id="custom-tooltip"
+          style={{ 
+            left: initialPosition?.x ?? hoverInfo.x, 
+            top: initialPosition?.y ?? hoverInfo.y 
+          }} 
+          onMouseLeave={() => {
+            setHoverInfo(null);
+            setInitialPosition(null);
+          }}
+          className="absolute z-1 pointer-events-auto bg-[rgba(255,255,255,0.95)] text-[#333] shadow-[0px_2px_10px_rgba(0,0,0,0.15)] max-w-[290px] p-2 rounded-md"
+        >
+          <Tooltip object={hoverInfo.object} />
+        </div>
+      )}
     </DeckGL>
   );
 };

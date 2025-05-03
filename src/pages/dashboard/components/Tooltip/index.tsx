@@ -13,7 +13,10 @@ interface TooltipProps {
 
 const Tooltip: React.FC<TooltipProps> = ({ object }) => {
   // const pmData = useMemo(() => generatePM25Data('2024-01-01', '2024-12-31'), []);
-  const svgMarkup = useMemo(() => generateCalendarHeatmapSVG(object.history), [object]);
+  const svgMarkup = useMemo(
+    () => generateCalendarHeatmapSVG(object.history),
+    [object]
+  );
 
   return (
     <div className="min-w-[180px] text-[13px]">
@@ -49,7 +52,21 @@ const Tooltip: React.FC<TooltipProps> = ({ object }) => {
           </div>
         )}
       </div>
-      <div style={{ marginTop: '8px' }} dangerouslySetInnerHTML={{ __html: svgMarkup }} />
+      <div
+        className="border bg-[#eee] whitespace-normal px-0 py-[3px] rounded-[3px] border-solid border-[#888] text-center cursor-pointer"
+        onClick={() => {
+          window.open(
+            `https://3d.google.com/u/0/models/3d-content/furniture/20220120/dining_table_01/model?hl=en&model=Dining_Table_01&authuser=0&project=furniture-20220120`,
+            "_blank"
+          );
+        }}
+      >
+        View details
+      </div>
+      <div
+        style={{ marginTop: "8px" }}
+        dangerouslySetInnerHTML={{ __html: svgMarkup }}
+      />
     </div>
   );
 };
