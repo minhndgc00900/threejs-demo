@@ -13,6 +13,12 @@ const data = d3.timeDays(startDate, today).map(date => ({
 
 const twoDayData = generateTwoDayHistory();
 
+const MODEL_CONFIG = {
+	SCALE: 20,
+	DEFAULT_PATH: "/models/factory.glb",
+} as const;
+
+
 export const factories: Factory[] = [
   // Bac Ninh
   {
@@ -27,6 +33,8 @@ export const factories: Factory[] = [
     history: data,
     populationDensity: 1400,
     twoDayHistory: twoDayData,
+    modelPath: MODEL_CONFIG.DEFAULT_PATH,
+    scale: MODEL_CONFIG.SCALE,
   },
   {
     id: 'foxconn-factory-bac-ninh',
@@ -40,6 +48,8 @@ export const factories: Factory[] = [
     history: data,
     populationDensity: 1400,
     twoDayHistory: twoDayData,
+    modelPath: MODEL_CONFIG.DEFAULT_PATH,
+    scale: MODEL_CONFIG.SCALE,
   },
   {
     id: 'bac-ninh-textile-company',
@@ -53,6 +63,8 @@ export const factories: Factory[] = [
     history: data,
     populationDensity: 1400,
     twoDayHistory: twoDayData,
+    modelPath: MODEL_CONFIG.DEFAULT_PATH,
+    scale: MODEL_CONFIG.SCALE,
   },
 
   // Dong Anh
@@ -68,6 +80,8 @@ export const factories: Factory[] = [
     history: data,
     populationDensity: 820,
     twoDayHistory: twoDayData,
+    modelPath: MODEL_CONFIG.DEFAULT_PATH,
+    scale: MODEL_CONFIG.SCALE,
   },
   {
     id: 'dong-anh-chemical-plant',
@@ -81,6 +95,8 @@ export const factories: Factory[] = [
     history: data,
     populationDensity: 700,
     twoDayHistory: twoDayData,
+    modelPath: MODEL_CONFIG.DEFAULT_PATH,
+    scale: MODEL_CONFIG.SCALE,
   },
   {
     id: 'dong-anh-food-processing-plant',
@@ -94,6 +110,8 @@ export const factories: Factory[] = [
     history: data,
     populationDensity: 1200,
     twoDayHistory: twoDayData,
+    modelPath: MODEL_CONFIG.DEFAULT_PATH,
+    scale: MODEL_CONFIG.SCALE,
   },
 
   // Hai Phong
@@ -109,6 +127,8 @@ export const factories: Factory[] = [
     history: data,
     populationDensity: 1100,
     twoDayHistory: twoDayData,
+    modelPath: MODEL_CONFIG.DEFAULT_PATH,
+    scale: MODEL_CONFIG.SCALE,
   },
   {
     id: 'vinfast-manufacturing-plant',
@@ -122,6 +142,8 @@ export const factories: Factory[] = [
     history: data,
     populationDensity: 1300,
     twoDayHistory: twoDayData,
+    modelPath: MODEL_CONFIG.DEFAULT_PATH,
+    scale: MODEL_CONFIG.SCALE,
   },
 
   // Thai Nguyen
@@ -137,6 +159,8 @@ export const factories: Factory[] = [
     history: data,
     populationDensity: 800,
     twoDayHistory: twoDayData,
+    modelPath: MODEL_CONFIG.DEFAULT_PATH,
+    scale: MODEL_CONFIG.SCALE,
   },
   {
     id: 'thai-nguyen-steel-plant',
@@ -150,6 +174,8 @@ export const factories: Factory[] = [
     history: data,
     populationDensity: 800,
     twoDayHistory: twoDayData,
+    modelPath: MODEL_CONFIG.DEFAULT_PATH,
+    scale: MODEL_CONFIG.SCALE,
   },
 
   // Vinh Phuc
@@ -165,6 +191,8 @@ export const factories: Factory[] = [
     history: data,
     populationDensity: 900,
     twoDayHistory: twoDayData,
+    modelPath: MODEL_CONFIG.DEFAULT_PATH,
+    scale: MODEL_CONFIG.SCALE,
   },
   {
     id: 'toyota-vietnam-assembly-plant',
@@ -178,6 +206,8 @@ export const factories: Factory[] = [
     history: data,
     populationDensity: 900,
     twoDayHistory: twoDayData,
+    modelPath: MODEL_CONFIG.DEFAULT_PATH,
+    scale: MODEL_CONFIG.SCALE,
   },
 
   // Hung Yen
@@ -193,6 +223,8 @@ export const factories: Factory[] = [
     history: data,
     populationDensity: 1120,
     twoDayHistory: twoDayData,
+    modelPath: MODEL_CONFIG.DEFAULT_PATH,
+    scale: MODEL_CONFIG.SCALE,
   },
   {
     id: 'hung-yen-textile-garment',
@@ -206,5 +238,7 @@ export const factories: Factory[] = [
     history: data,
     populationDensity: 1100,
     twoDayHistory: twoDayData,
+    modelPath: MODEL_CONFIG.DEFAULT_PATH,
+    scale: MODEL_CONFIG.SCALE,
   },
 ];

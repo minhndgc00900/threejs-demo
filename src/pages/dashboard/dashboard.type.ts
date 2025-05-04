@@ -12,4 +12,6 @@ export interface Factory {
     populationDensity: number;
     history: History[];
     twoDayHistory: History[];
+    modelPath?: string;
+    scale?: number;
   }
