@@ -1,5 +1,5 @@
 import { Factory } from "../../../dashboard/dashboard.type";
-import PM25BarChart from "../../../../components/Barchart";
+import BarChart from "../../../../components/Barchart";
 import {
   getPollutionLevelDetail,
   getColorByPollution,
@@ -34,7 +34,7 @@ const FactoryStatus = ({ factory }: FactoryStatusProps) => {
           <p className="text-[18px] text-shadow-[0px_0px_10px_rgba(0,0,0,0.5)]" style={{ color: getColorByPollution(factory.pollutionLevel, true) as string }}>for Sensitive Groups</p>
         </div>
       </div>
-      <PM25BarChart history={factory.twoDayHistory} />
+      <BarChart history={factory.twoDayHistory} />
     </div>
   );
 };

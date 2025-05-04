@@ -40,8 +40,6 @@ const DeckGLOverlay = (props: {
 };
 
 export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factory }) => {
-  console.log(2323, factory);
-  
   const [hoverInfo, setHoverInfo] = useState<PickingInfo<Factory> | null>(null);
   const [initialPosition, setInitialPosition] = useState<{
     x: number;
