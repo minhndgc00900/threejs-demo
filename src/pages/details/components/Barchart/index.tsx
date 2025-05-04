@@ -1,5 +1,5 @@
 // PM25BarChart.tsx
-import { Html, OrbitControls } from "@react-three/drei";
+import { Html } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { isEmpty } from "lodash";
 import { Color } from "../../../../utils/colors";
@@ -25,6 +25,16 @@ const Bar = ({
         <boxGeometry args={[0.3, height, 0.8]} />
         <meshStandardMaterial color={Color.GOOD} />
       </mesh>
+      {/* Add wireframe for border */}
+      <mesh>
+        <boxGeometry args={[0.3, height, 0.8]} />
+        <meshStandardMaterial 
+          color="#000000" 
+          wireframe={true}
+          transparent={true}
+          opacity={0.3}
+        />
+      </mesh>
       {/* Date label (below) */}
       <Html position={[0, -height / 2 - 0.6, 0]} center>
         <div style={{ color: "#666", fontSize: "12px", whiteSpace: "nowrap" }}>
@@ -45,7 +55,6 @@ const PM25BarChart = ({ history }: { history: History[] }) => {
     <Canvas camera={{ position: [0, 0, 21], fov: 40 }}>
       <ambientLight />
       <directionalLight position={[5, 10, 5]} intensity={1} />
-      <OrbitControls enableZoom enablePan />
 
       {!isEmpty(history) && history.map((entry, i) => (
         <Bar

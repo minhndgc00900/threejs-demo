@@ -35,7 +35,7 @@ export const getColorByPollution = (
 
 export const formatDate = (date: Date, prevDate?: Date) => {
     if (!prevDate || date.getDate() !== prevDate.getDate()) {
-        return date.toLocaleDateString('en-US', { weekday: 'short' });
+        return Number(date.getHours().toString()) % 6 === 0 ? date.toLocaleDateString('en-US', { weekday: 'short' }) : '';
     }
     
     return Number(date.getHours().toString()) % 6 === 0 ? Number(date.getHours().toString()) : '';
