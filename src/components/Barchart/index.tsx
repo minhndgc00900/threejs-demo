@@ -2,9 +2,8 @@
 import { Html } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { isEmpty } from "lodash";
-import { Color } from "../../../../utils/colors";
-import { formatDate } from "../../../../utils/common";
-import { History } from "../../../dashboard/dashboard.type";
+import { History } from "../../types";
+import { formatDate, getColorByPollution } from "../../utils/common";
 
 
 const Bar = ({
@@ -23,7 +22,7 @@ const Bar = ({
     <group position={[x, height / 2, 0]}>
       <mesh>
         <boxGeometry args={[0.3, height, 0.8]} />
-        <meshStandardMaterial color={Color.GOOD} />
+        <meshStandardMaterial color={getColorByPollution(height*30, true)} />
       </mesh>
       {/* Add wireframe for border */}
       <mesh>
@@ -45,7 +44,7 @@ const Bar = ({
   )
 };
 
-const PM25BarChart = ({ history }: { history: History[] }) => {
+const BarChart = ({ history }: { history: History[] }) => {
   const totalBars = history.length;
   const spacing = 0.3; // Reduced from 2 to 1.5
   const totalWidth = totalBars * spacing;
@@ -59,7 +58,7 @@ const PM25BarChart = ({ history }: { history: History[] }) => {
       {!isEmpty(history) && history.map((entry, i) => (
         <Bar
           key={i}
-          height={entry.value / 20}
+          height={entry.value / 30}
           x={i * spacing + centerOffset}
           date={entry.date}
           prevDate={history[i - 1]?.date}
@@ -69,4 +68,4 @@ const PM25BarChart = ({ history }: { history: History[] }) => {
   )
 };
 
-export default PM25BarChart;
+export default BarChart;

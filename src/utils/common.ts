@@ -6,6 +6,12 @@ export const getPollutionLevel = (density: number) => {
     return "high";
 };
 
+export const getPollutionLevelDetail = (density: number) => {
+    if (density < 20) return "Good";
+    if (density < 40) return "Moderate";
+    return "Unhealthy";
+};
+
 export const getColorByPollution = (
     density: number,
     isHex?: boolean,

@@ -1,7 +1,4 @@
-export interface History {
-    date: Date;
-    value: number;
-}
+import { History } from "../../types";
 
 export interface Factory {
     id: string;
