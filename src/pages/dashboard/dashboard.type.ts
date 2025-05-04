@@ -1,3 +1,8 @@
+export interface History {
+    date: Date;
+    value: number;
+}
+
 export interface Factory {
     id: string;
     name: string;
@@ -8,5 +13,6 @@ export interface Factory {
     workers: number;
     district: string;
     populationDensity: number;
-    history: { date: Date; value: number }[];
+    history: History[];
+    twoDayHistory: History[];
   }

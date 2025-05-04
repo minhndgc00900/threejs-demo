@@ -40,7 +40,7 @@ export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factory }) => {
       elevationScale: 50,
       getPosition: (d) => [d.longitude, d.latitude],
       getElevation: (d) => d.populationDensity,
-      getFillColor: (d) => getColorByPollution(d.pollutionLevel),
+      getFillColor: (d) => getColorByPollution(d.pollutionLevel) as [number, number, number],
       pickable: true,
       onHover: (info) => {
         if (info.object) {

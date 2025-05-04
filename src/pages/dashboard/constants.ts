@@ -1,3 +1,4 @@
+import { generateTwoDayHistory } from "../../utils/common";
 import { Factory } from "./dashboard.type";
 import * as d3 from 'd3';
 
@@ -9,6 +10,8 @@ const data = d3.timeDays(startDate, today).map(date => ({
   date,
   value: Math.floor(Math.random() * 100), // replace with your logic
 }));
+
+const twoDayData = generateTwoDayHistory();
 
 export const factories: Factory[] = [
   // Bac Ninh
@@ -23,6 +26,7 @@ export const factories: Factory[] = [
     district: 'Bac Ninh',
     history: data,
     populationDensity: 1400,
+    twoDayHistory: twoDayData,
   },
   {
     id: 'foxconn-factory-bac-ninh',
@@ -35,6 +39,7 @@ export const factories: Factory[] = [
     district: 'Bac Ninh',
     history: data,
     populationDensity: 1400,
+    twoDayHistory: twoDayData,
   },
   {
     id: 'bac-ninh-textile-company',
@@ -47,6 +52,7 @@ export const factories: Factory[] = [
     district: 'Bac Ninh',
     history: data,
     populationDensity: 1400,
+    twoDayHistory: twoDayData,
   },
 
   // Dong Anh
@@ -61,6 +67,7 @@ export const factories: Factory[] = [
     district: 'Dong Anh',
     history: data,
     populationDensity: 820,
+    twoDayHistory: twoDayData,
   },
   {
     id: 'dong-anh-chemical-plant',
@@ -73,6 +80,7 @@ export const factories: Factory[] = [
     district: 'Dong Anh',
     history: data,
     populationDensity: 700,
+    twoDayHistory: twoDayData,
   },
   {
     id: 'dong-anh-food-processing-plant',
@@ -85,6 +93,7 @@ export const factories: Factory[] = [
     district: 'Dong Anh',
     history: data,
     populationDensity: 1200,
+    twoDayHistory: twoDayData,
   },
 
   // Hai Phong
@@ -99,6 +108,7 @@ export const factories: Factory[] = [
     district: 'Hai Phong',
     history: data,
     populationDensity: 1100,
+    twoDayHistory: twoDayData,
   },
   {
     id: 'vinfast-manufacturing-plant',
@@ -111,6 +121,7 @@ export const factories: Factory[] = [
     district: 'Hai Phong',
     history: data,
     populationDensity: 1300,
+    twoDayHistory: twoDayData,
   },
 
   // Thai Nguyen
@@ -125,6 +136,7 @@ export const factories: Factory[] = [
     district: 'Thai Nguyen',
     history: data,
     populationDensity: 800,
+    twoDayHistory: twoDayData,
   },
   {
     id: 'thai-nguyen-steel-plant',
@@ -137,6 +149,7 @@ export const factories: Factory[] = [
     district: 'Thai Nguyen',
     history: data,
     populationDensity: 800,
+    twoDayHistory: twoDayData,
   },
 
   // Vinh Phuc
@@ -151,6 +164,7 @@ export const factories: Factory[] = [
     district: 'Vinh Phuc',
     history: data,
     populationDensity: 900,
+    twoDayHistory: twoDayData,
   },
   {
     id: 'toyota-vietnam-assembly-plant',
@@ -163,6 +177,7 @@ export const factories: Factory[] = [
     district: 'Vinh Phuc',
     history: data,
     populationDensity: 900,
+    twoDayHistory: twoDayData,
   },
 
   // Hung Yen
@@ -177,6 +192,7 @@ export const factories: Factory[] = [
     district: 'Hung Yen',
     history: data,
     populationDensity: 1120,
+    twoDayHistory: twoDayData,
   },
   {
     id: 'hung-yen-textile-garment',
@@ -189,5 +205,6 @@ export const factories: Factory[] = [
     district: 'Hung Yen',
     history: data,
     populationDensity: 1100,
+    twoDayHistory: twoDayData,
   },
 ];
