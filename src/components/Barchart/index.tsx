@@ -2,7 +2,7 @@
 import { Html } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { isEmpty } from "lodash";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import * as THREE from "three";
 import { History } from "../../types";
 import { formatDate, getColorByPollution } from "../../utils/common";
@@ -12,13 +12,16 @@ const Bar = ({
   x,
   date,
   prevDate,
+  value,
 }: {
   height: number;
   x: number;
   date: Date;
   prevDate?: Date;
+  value: number;
 }) => {
   const meshRef = useRef<THREE.Mesh>(null);
+  const [isHovered, setIsHovered] = useState(false);
   const initialHeight = 0.1;
   const targetHeight = height;
   const animationDuration = 1000;
@@ -41,9 +44,17 @@ const Bar = ({
 
   return (
     <group position={[x, height / 2, 0]}>
-      <mesh ref={meshRef}>
+      <mesh 
+        ref={meshRef}
+        onPointerOver={() => setIsHovered(true)}
+        onPointerOut={() => setIsHovered(false)}
+      >
         <boxGeometry args={[0.3, height, 0.8]} />
-        <meshStandardMaterial color={getColorByPollution(height * 30, true)} />
+        <meshStandardMaterial 
+          color={isHovered ? getColorByPollution(height * 30, true) : getColorByPollution(height * 30, true)} 
+          opacity={isHovered ? 0.8 : 1}
+          transparent={true}
+        />
       </mesh>
       {/* Add wireframe for border */}
       <mesh>
@@ -61,6 +72,14 @@ const Bar = ({
           {formatDate(date, prevDate)}
         </div>
       </Html>
+      {/* Value tooltip */}
+      {isHovered && (
+        <Html position={[0, height + 0.5, 0]} center>
+          <div className="bg-white px-2 py-1 rounded shadow text-sm">
+            {value.toFixed(1)} µg/m³
+          </div>
+        </Html>
+      )}
     </group>
   );
 };
@@ -88,6 +107,7 @@ const BarChart = ({ history }: { history: History[] }) => {
               x={i * spacing + centerOffset}
               date={entry.date}
               prevDate={history[i - 1]?.date}
+              value={entry.value}
             />
           ))}
       </Canvas>
