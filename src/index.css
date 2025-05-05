@@ -106,5 +106,5 @@ a, h1, h2, h3, h4, h5, h6, div, button {
 }
 
 .section-container {
-  @apply relative w-[472px] h-[474px] bg-[var(--color-fog)] border min-w-[100px] shadow-[0_1px_3px_var(--color-shadow)] rounded-[5px] border-solid border-[var(--color-border)];
+  @apply relative w-full xl:w-[472px] h-[474px] bg-[var(--color-fog)] border min-w-[100px] shadow-[0_1px_3px_var(--color-shadow)] rounded-[5px] border-solid border-[var(--color-border)];
 }

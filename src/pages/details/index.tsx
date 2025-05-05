@@ -3,6 +3,7 @@ import { Factory3DMap } from "./components/Factory3DMap";
 import { factories } from "../dashboard/constants";
 import { Factory } from "../dashboard/dashboard.type";
 import FactoryStatus from "./components/FactoryStatus";
+import Piechart from "../../components/Piechart";
 
 const Details = () => {
   const { id } = useParams();
@@ -12,11 +13,14 @@ const Details = () => {
   );
 
   return (
-    <div className="flex flex-col xl:flex-row gap-6 justify-center mt-2">
+    <div className="flex flex-col xl:flex-row gap-6 justify-center mt-2 flex-wrap">
       {factory && (
         <>
           <FactoryStatus factory={factory} />
           <Factory3DMap factory={factory} />
+          <div className="section-container !w-full">
+            <Piechart factory={factory} />
+          </div>
         </>
       )}
     </div>

@@ -35,6 +35,28 @@ export const factories: Factory[] = [
     twoDayHistory: twoDayData,
     modelPath: MODEL_CONFIG.DEFAULT_PATH,
     scale: MODEL_CONFIG.SCALE,
+    pollutionStatistics: [
+      {
+        type: "Air Pollution",
+        percentage: 44,
+        color: "#4286f4",
+      },
+      {
+        type: "Water Pollution",
+        percentage: 23,
+        color: "#f94144",
+      },
+      {
+        type: "Soil Pollution",
+        percentage: 18,
+        color: "#f9844a",
+      },
+      {
+        type: "Noise Pollution",
+        percentage: 14,
+        color: "#90be6d",
+      },
+    ]
   },
   {
     id: 'foxconn-factory-bac-ninh',
@@ -50,6 +72,28 @@ export const factories: Factory[] = [
     twoDayHistory: twoDayData,
     modelPath: MODEL_CONFIG.DEFAULT_PATH,
     scale: MODEL_CONFIG.SCALE,
+    pollutionStatistics: [
+      {
+        type: "Air Pollution",
+        percentage: 44,
+        color: "#4286f4",
+      },
+      {
+        type: "Water Pollution",
+        percentage: 23,
+        color: "#f94144",
+      },
+      {
+        type: "Soil Pollution",
+        percentage: 18,
+        color: "#f9844a",
+      },
+      {
+        type: "Noise Pollution",
+        percentage: 14,
+        color: "#90be6d",
+      },
+    ]
   },
   {
     id: 'bac-ninh-textile-company',
@@ -65,6 +109,28 @@ export const factories: Factory[] = [
     twoDayHistory: twoDayData,
     modelPath: MODEL_CONFIG.DEFAULT_PATH,
     scale: MODEL_CONFIG.SCALE,
+    pollutionStatistics: [
+      {
+        type: "Air Pollution",
+        percentage: 44,
+        color: "#4286f4",
+      },
+      {
+        type: "Water Pollution",
+        percentage: 23,
+        color: "#f94144",
+      },
+      {
+        type: "Soil Pollution",
+        percentage: 18,
+        color: "#f9844a",
+      },
+      {
+        type: "Noise Pollution",
+        percentage: 14,
+        color: "#90be6d",
+      },
+    ]
   },
 
   // Dong Anh
@@ -82,6 +148,28 @@ export const factories: Factory[] = [
     twoDayHistory: twoDayData,
     modelPath: MODEL_CONFIG.DEFAULT_PATH,
     scale: MODEL_CONFIG.SCALE,
+    pollutionStatistics: [
+      {
+        type: "Air Pollution",
+        percentage: 44,
+        color: "#4286f4",
+      },
+      {
+        type: "Water Pollution",
+        percentage: 23,
+        color: "#f94144",
+      },
+      {
+        type: "Soil Pollution",
+        percentage: 18,
+        color: "#f9844a",
+      },
+      {
+        type: "Noise Pollution",
+        percentage: 14,
+        color: "#90be6d",
+      },
+    ]
   },
   {
     id: 'dong-anh-chemical-plant',
@@ -97,6 +185,28 @@ export const factories: Factory[] = [
     twoDayHistory: twoDayData,
     modelPath: MODEL_CONFIG.DEFAULT_PATH,
     scale: MODEL_CONFIG.SCALE,
+    pollutionStatistics: [
+      {
+        type: "Air Pollution",
+        percentage: 44,
+        color: "#4286f4",
+      },
+      {
+        type: "Water Pollution",
+        percentage: 23,
+        color: "#f94144",
+      },
+      {
+        type: "Soil Pollution",
+        percentage: 18,
+        color: "#f9844a",
+      },
+      {
+        type: "Noise Pollution",
+        percentage: 14,
+        color: "#90be6d",
+      },
+    ]
   },
   {
     id: 'dong-anh-food-processing-plant',
@@ -112,6 +222,28 @@ export const factories: Factory[] = [
     twoDayHistory: twoDayData,
     modelPath: MODEL_CONFIG.DEFAULT_PATH,
     scale: MODEL_CONFIG.SCALE,
+    pollutionStatistics: [
+      {
+        type: "Air Pollution",
+        percentage: 44,
+        color: "#4286f4",
+      },
+      {
+        type: "Water Pollution",
+        percentage: 23,
+        color: "#f94144",
+      },
+      {
+        type: "Soil Pollution",
+        percentage: 18,
+        color: "#f9844a",
+      },
+      {
+        type: "Noise Pollution",
+        percentage: 14,
+        color: "#90be6d",
+      },
+    ]
   },
 
   // Hai Phong
@@ -129,6 +261,28 @@ export const factories: Factory[] = [
     twoDayHistory: twoDayData,
     modelPath: MODEL_CONFIG.DEFAULT_PATH,
     scale: MODEL_CONFIG.SCALE,
+    pollutionStatistics: [
+      {
+        type: "Air Pollution",
+        percentage: 44,
+        color: "#4286f4",
+      },
+      {
+        type: "Water Pollution",
+        percentage: 23,
+        color: "#f94144",
+      },
+      {
+        type: "Soil Pollution",
+        percentage: 18,
+        color: "#f9844a",
+      },
+      {
+        type: "Noise Pollution",
+        percentage: 14,
+        color: "#90be6d",
+      },
+    ]
   },
   {
     id: 'vinfast-manufacturing-plant',
@@ -144,6 +298,28 @@ export const factories: Factory[] = [
     twoDayHistory: twoDayData,
     modelPath: MODEL_CONFIG.DEFAULT_PATH,
     scale: MODEL_CONFIG.SCALE,
+    pollutionStatistics: [
+      {
+        type: "Air Pollution",
+        percentage: 44,
+        color: "#4286f4",
+      },
+      {
+        type: "Water Pollution",
+        percentage: 23,
+        color: "#f94144",
+      },
+      {
+        type: "Soil Pollution",
+        percentage: 18,
+        color: "#f9844a",
+      },
+      {
+        type: "Noise Pollution",
+        percentage: 14,
+        color: "#90be6d",
+      },
+    ]
   },
 
   // Thai Nguyen
@@ -161,6 +337,28 @@ export const factories: Factory[] = [
     twoDayHistory: twoDayData,
     modelPath: MODEL_CONFIG.DEFAULT_PATH,
     scale: MODEL_CONFIG.SCALE,
+    pollutionStatistics: [
+      {
+        type: "Air Pollution",
+        percentage: 44,
+        color: "#4286f4",
+      },
+      {
+        type: "Water Pollution",
+        percentage: 23,
+        color: "#f94144",
+      },
+      {
+        type: "Soil Pollution",
+        percentage: 18,
+        color: "#f9844a",
+      },
+      {
+        type: "Noise Pollution",
+        percentage: 14,
+        color: "#90be6d",
+      },
+    ]
   },
   {
     id: 'thai-nguyen-steel-plant',
@@ -176,6 +374,28 @@ export const factories: Factory[] = [
     twoDayHistory: twoDayData,
     modelPath: MODEL_CONFIG.DEFAULT_PATH,
     scale: MODEL_CONFIG.SCALE,
+    pollutionStatistics: [
+      {
+        type: "Air Pollution",
+        percentage: 44,
+        color: "#4286f4",
+      },
+      {
+        type: "Water Pollution",
+        percentage: 23,
+        color: "#f94144",
+      },
+      {
+        type: "Soil Pollution",
+        percentage: 18,
+        color: "#f9844a",
+      },
+      {
+        type: "Noise Pollution",
+        percentage: 14,
+        color: "#90be6d",
+      },
+    ]
   },
 
   // Vinh Phuc
@@ -193,6 +413,28 @@ export const factories: Factory[] = [
     twoDayHistory: twoDayData,
     modelPath: MODEL_CONFIG.DEFAULT_PATH,
     scale: MODEL_CONFIG.SCALE,
+    pollutionStatistics: [
+      {
+        type: "Air Pollution",
+        percentage: 44,
+        color: "#4286f4",
+      },
+      {
+        type: "Water Pollution",
+        percentage: 23,
+        color: "#f94144",
+      },
+      {
+        type: "Soil Pollution",
+        percentage: 18,
+        color: "#f9844a",
+      },
+      {
+        type: "Noise Pollution",
+        percentage: 14,
+        color: "#90be6d",
+      },
+    ]
   },
   {
     id: 'toyota-vietnam-assembly-plant',
@@ -208,6 +450,28 @@ export const factories: Factory[] = [
     twoDayHistory: twoDayData,
     modelPath: MODEL_CONFIG.DEFAULT_PATH,
     scale: MODEL_CONFIG.SCALE,
+    pollutionStatistics: [
+      {
+        type: "Air Pollution",
+        percentage: 44,
+        color: "#4286f4",
+      },
+      {
+        type: "Water Pollution",
+        percentage: 23,
+        color: "#f94144",
+      },
+      {
+        type: "Soil Pollution",
+        percentage: 18,
+        color: "#f9844a",
+      },
+      {
+        type: "Noise Pollution",
+        percentage: 14,
+        color: "#90be6d",
+      },
+    ]
   },
 
   // Hung Yen
@@ -225,6 +489,28 @@ export const factories: Factory[] = [
     twoDayHistory: twoDayData,
     modelPath: MODEL_CONFIG.DEFAULT_PATH,
     scale: MODEL_CONFIG.SCALE,
+    pollutionStatistics: [
+      {
+        type: "Air Pollution",
+        percentage: 44,
+        color: "#4286f4",
+      },
+      {
+        type: "Water Pollution",
+        percentage: 23,
+        color: "#f94144",
+      },
+      {
+        type: "Soil Pollution",
+        percentage: 18,
+        color: "#f9844a",
+      },
+      {
+        type: "Noise Pollution",
+        percentage: 14,
+        color: "#90be6d",
+      },
+    ]
   },
   {
     id: 'hung-yen-textile-garment',
@@ -240,5 +526,27 @@ export const factories: Factory[] = [
     twoDayHistory: twoDayData,
     modelPath: MODEL_CONFIG.DEFAULT_PATH,
     scale: MODEL_CONFIG.SCALE,
+    pollutionStatistics: [
+      {
+        type: "Air Pollution",
+        percentage: 44,
+        color: "#4286f4",
+      },
+      {
+        type: "Water Pollution",
+        percentage: 23,
+        color: "#f94144",
+      },
+      {
+        type: "Soil Pollution",
+        percentage: 18,
+        color: "#f9844a",
+      },
+      {
+        type: "Noise Pollution",
+        percentage: 14,
+        color: "#90be6d",
+      },
+    ]
   },
 ];

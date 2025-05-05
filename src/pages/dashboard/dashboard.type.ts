@@ -1,5 +1,11 @@
 import { History } from "../../types";
 
+export interface PollutionStatistics {
+  type: string;
+  percentage: number;
+  color: string;
+}
+
 export interface Factory {
     id: string;
     name: string;
@@ -14,4 +20,5 @@ export interface Factory {
     twoDayHistory: History[];
     modelPath?: string;
     scale?: number;
+    pollutionStatistics: PollutionStatistics[];
   }

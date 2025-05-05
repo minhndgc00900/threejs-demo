@@ -70,8 +70,6 @@ export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factory }) => {
           data: [building],
           scenegraph: building.modelPath,
           getPosition: (d) => {
-            console.log(222, d);
-            
             return [d.longitude, d.latitude, 0]
           },
           getOrientation: [0, 0, 90],
