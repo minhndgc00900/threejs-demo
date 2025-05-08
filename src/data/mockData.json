@@ -1,0 +1,744 @@
+{
+	"provinces": [
+		{
+			"id": 1,
+			"name": "Quang Ninh"
+		},
+		{
+			"id": 2,
+			"name": "Tay Ninh"
+		},
+		{
+			"id": 3,
+			"name": "Lai Chau"
+		},
+		{
+			"id": 4,
+			"name": "Bac Kan"
+		},
+		{
+			"id": 5,
+			"name": "Thai Nguyen"
+		},
+		{
+			"id": 6,
+			"name": "Lao Cai"
+		},
+		{
+			"id": 7,
+			"name": "Lang Son"
+		},
+		{
+			"id": 8,
+			"name": "Son La"
+		},
+		{
+			"id": 9,
+			"name": "Thanh Hoa"
+		},
+		{
+			"id": 10,
+			"name": "Tuyen Quang"
+		},
+		{
+			"id": 11,
+			"name": "Yen Bai"
+		},
+		{
+			"id": 12,
+			"name": "Hoa Binh"
+		},
+		{
+			"id": 13,
+			"name": "Hai Duong"
+		},
+		{
+			"id": 14,
+			"name": "Hai Phong"
+		},
+		{
+			"id": 15,
+			"name": "Hung Yen"
+		},
+		{
+			"id": 16,
+			"name": "Ha Noi"
+		},
+		{
+			"id": 17,
+			"name": "Bac Ninh"
+		},
+		{
+			"id": 18,
+			"name": "Vinh Phuc"
+		},
+		{
+			"id": 19,
+			"name": "Ninh Binh"
+		},
+		{
+			"id": 20,
+			"name": "Ha Nam"
+		},
+		{
+			"id": 21,
+			"name": "Nam Dinh"
+		},
+		{
+			"id": 22,
+			"name": "Phu Tho"
+		},
+		{
+			"id": 23,
+			"name": "Bac Giang"
+		},
+		{
+			"id": 24,
+			"name": "Thai Binh"
+		},
+		{
+			"id": 25,
+			"name": "Ha Tinh"
+		},
+		{
+			"id": 26,
+			"name": "Nghe An"
+		},
+		{
+			"id": 27,
+			"name": "Quang Binh"
+		},
+		{
+			"id": 28,
+			"name": "Gia Lai"
+		},
+		{
+			"id": 29,
+			"name": "Khanh Hoa"
+		},
+		{
+			"id": 30,
+			"name": "Lam Dong"
+		},
+		{
+			"id": 31,
+			"name": "Ninh Thuan"
+		},
+		{
+			"id": 32,
+			"name": "Phu Yen"
+		},
+		{
+			"id": 33,
+			"name": "Binh Duong"
+		},
+		{
+			"id": 34,
+			"name": "Binh Phuoc"
+		},
+		{
+			"id": 35,
+			"name": "Binh Dinh"
+		},
+		{
+			"id": 36,
+			"name": "Kon Tum"
+		},
+		{
+			"id": 37,
+			"name": "Quang Nam"
+		},
+		{
+			"id": 38,
+			"name": "Quang Ngai"
+		},
+		{
+			"id": 39,
+			"name": "Quang Tri"
+		},
+		{
+			"id": 40,
+			"name": "Thua Thien Hue"
+		},
+		{
+			"id": 41,
+			"name": "Da Nang"
+		},
+		{
+			"id": 42,
+			"name": "Vung Tau"
+		},
+		{
+			"id": 43,
+			"name": "Binh Thuan"
+		},
+		{
+			"id": 44,
+			"name": "Dong Nai"
+		},
+		{
+			"id": 45,
+			"name": "An Giang"
+		},
+		{
+			"id": 46,
+			"name": "Dong Thap"
+		},
+		{
+			"id": 47,
+			"name": "Ho Chi Minh"
+		},
+		{
+			"id": 48,
+			"name": "Kien Giang"
+		},
+		{
+			"id": 49,
+			"name": "Long An"
+		},
+		{
+			"id": 50,
+			"name": "Tien Giang"
+		},
+		{
+			"id": 51,
+			"name": "Can Tho"
+		},
+		{
+			"id": 52,
+			"name": "Bac Lieu"
+		},
+		{
+			"id": 53,
+			"name": "Ca Mau"
+		},
+		{
+			"id": 54,
+			"name": "Soc Trang"
+		},
+		{
+			"id": 55,
+			"name": "Tra Vinh"
+		},
+		{
+			"id": 56,
+			"name": "Vinh Long"
+		},
+		{
+			"id": 57,
+			"name": "Cao Bang"
+		},
+		{
+			"id": 58,
+			"name": "Ha Giang"
+		},
+		{
+			"id": 59,
+			"name": "Dak Nong"
+		},
+		{
+			"id": 60,
+			"name": "Dak Lak"
+		},
+		{
+			"id": 61,
+			"name": "Ben Tre"
+		},
+		{
+			"id": 62,
+			"name": "Hau Giang"
+		}
+	],
+	"dailyReports": [
+		{
+			"provinceID": 0,
+			"numberOfFactory": 1390,
+			"pollutionLevel": 16,
+			"mainFactor": 1363,
+			"mainSector": "mining"
+		},
+		{
+			"provinceID": 1,
+			"numberOfFactory": 594,
+			"pollutionLevel": 9,
+			"mainFactor": 331,
+			"mainSector": "automotive"
+		},
+		{
+			"provinceID": 2,
+			"numberOfFactory": 296,
+			"pollutionLevel": 64,
+			"mainFactor": 887,
+			"mainSector": "textile"
+		},
+		{
+			"provinceID": 3,
+			"numberOfFactory": 184,
+			"pollutionLevel": 4,
+			"mainFactor": 570,
+			"mainSector": "beer"
+		},
+		{
+			"provinceID": 4,
+			"numberOfFactory": 370,
+			"pollutionLevel": 36,
+			"mainFactor": 1123,
+			"mainSector": "textile"
+		},
+		{
+			"provinceID": 5,
+			"numberOfFactory": 1205,
+			"pollutionLevel": 40,
+			"mainFactor": 1006,
+			"mainSector": "pharmaceuticals"
+		},
+		{
+			"provinceID": 6,
+			"numberOfFactory": 1503,
+			"pollutionLevel": 28,
+			"mainFactor": -857,
+			"mainSector": "beer"
+		},
+		{
+			"provinceID": 7,
+			"numberOfFactory": 1154,
+			"pollutionLevel": 51,
+			"mainFactor": -839,
+			"mainSector": "electronics"
+		},
+		{
+			"provinceID": 8,
+			"numberOfFactory": 177,
+			"pollutionLevel": 54,
+			"mainFactor": 543,
+			"mainSector": "automotive"
+		},
+		{
+			"provinceID": 9,
+			"numberOfFactory": 1332,
+			"pollutionLevel": 35,
+			"mainFactor": -787,
+			"mainSector": "textile"
+		},
+		{
+			"provinceID": 10,
+			"numberOfFactory": 609,
+			"pollutionLevel": 56,
+			"mainFactor": 121,
+			"mainSector": "textile"
+		},
+		{
+			"provinceID": 11,
+			"numberOfFactory": 1833,
+			"pollutionLevel": 70,
+			"mainFactor": -266,
+			"mainSector": "electronics"
+		},
+		{
+			"provinceID": 12,
+			"numberOfFactory": 872,
+			"pollutionLevel": 46,
+			"mainFactor": 744,
+			"mainSector": "automotive"
+		},
+		{
+			"provinceID": 13,
+			"numberOfFactory": 1962,
+			"pollutionLevel": 33,
+			"mainFactor": -854,
+			"mainSector": "energy"
+		},
+		{
+			"provinceID": 14,
+			"numberOfFactory": 1208,
+			"pollutionLevel": 51,
+			"mainFactor": 1065,
+			"mainSector": "automotive"
+		},
+		{
+			"provinceID": 15,
+			"numberOfFactory": 1531,
+			"pollutionLevel": 26,
+			"mainFactor": 338,
+			"mainSector": "construction"
+		},
+		{
+			"provinceID": 16,
+			"numberOfFactory": 1004,
+			"pollutionLevel": 21,
+			"mainFactor": 1388,
+			"mainSector": "textile"
+		},
+		{
+			"provinceID": 17,
+			"numberOfFactory": 1007,
+			"pollutionLevel": 8,
+			"mainFactor": -259,
+			"mainSector": "electronics"
+		},
+		{
+			"provinceID": 18,
+			"numberOfFactory": 1391,
+			"pollutionLevel": 55,
+			"mainFactor": 1327,
+			"mainSector": "energy"
+		},
+		{
+			"provinceID": 19,
+			"numberOfFactory": 927,
+			"pollutionLevel": 37,
+			"mainFactor": 1013,
+			"mainSector": "car"
+		},
+		{
+			"provinceID": 20,
+			"numberOfFactory": 334,
+			"pollutionLevel": 8,
+			"mainFactor": -660,
+			"mainSector": "textile"
+		},
+		{
+			"provinceID": 21,
+			"numberOfFactory": 681,
+			"pollutionLevel": 35,
+			"mainFactor": 673,
+			"mainSector": "beer"
+		},
+		{
+			"provinceID": 22,
+			"numberOfFactory": 1024,
+			"pollutionLevel": 15,
+			"mainFactor": 219,
+			"mainSector": "food"
+		},
+		{
+			"provinceID": 23,
+			"numberOfFactory": 1847,
+			"pollutionLevel": 32,
+			"mainFactor": 540,
+			"mainSector": "food"
+		},
+		{
+			"provinceID": 24,
+			"numberOfFactory": 822,
+			"pollutionLevel": 36,
+			"mainFactor": -423,
+			"mainSector": "construction"
+		},
+		{
+			"provinceID": 25,
+			"numberOfFactory": 1811,
+			"pollutionLevel": 15,
+			"mainFactor": 1183,
+			"mainSector": "energy"
+		},
+		{
+			"provinceID": 26,
+			"numberOfFactory": 998,
+			"pollutionLevel": 66,
+			"mainFactor": 149,
+			"mainSector": "electronics"
+		},
+		{
+			"provinceID": 27,
+			"numberOfFactory": 1258,
+			"pollutionLevel": 43,
+			"mainFactor": -219,
+			"mainSector": "energy"
+		},
+		{
+			"provinceID": 28,
+			"numberOfFactory": 505,
+			"pollutionLevel": 32,
+			"mainFactor": 590,
+			"mainSector": "electronics"
+		},
+		{
+			"provinceID": 29,
+			"numberOfFactory": 1973,
+			"pollutionLevel": 2,
+			"mainFactor": 925,
+			"mainSector": "car"
+		},
+		{
+			"provinceID": 30,
+			"numberOfFactory": 854,
+			"pollutionLevel": 45,
+			"mainFactor": -342,
+			"mainSector": "mining"
+		},
+		{
+			"provinceID": 31,
+			"numberOfFactory": 1277,
+			"pollutionLevel": 35,
+			"mainFactor": 1318,
+			"mainSector": "energy"
+		},
+		{
+			"provinceID": 32,
+			"numberOfFactory": 394,
+			"pollutionLevel": 70,
+			"mainFactor": 1117,
+			"mainSector": "pharmaceuticals"
+		},
+		{
+			"provinceID": 33,
+			"numberOfFactory": 1344,
+			"pollutionLevel": 68,
+			"mainFactor": -59,
+			"mainSector": "beer"
+		},
+		{
+			"provinceID": 34,
+			"numberOfFactory": 1606,
+			"pollutionLevel": 66,
+			"mainFactor": 913,
+			"mainSector": "beer"
+		},
+		{
+			"provinceID": 35,
+			"numberOfFactory": 1164,
+			"pollutionLevel": 65,
+			"mainFactor": 1097,
+			"mainSector": "car"
+		},
+		{
+			"provinceID": 36,
+			"numberOfFactory": 729,
+			"pollutionLevel": 0,
+			"mainFactor": -792,
+			"mainSector": "textile"
+		},
+		{
+			"provinceID": 37,
+			"numberOfFactory": 982,
+			"pollutionLevel": 39,
+			"mainFactor": 1487,
+			"mainSector": "food"
+		},
+		{
+			"provinceID": 38,
+			"numberOfFactory": 1072,
+			"pollutionLevel": 58,
+			"mainFactor": -681,
+			"mainSector": "energy"
+		},
+		{
+			"provinceID": 39,
+			"numberOfFactory": 116,
+			"pollutionLevel": 65,
+			"mainFactor": -540,
+			"mainSector": "energy"
+		},
+		{
+			"provinceID": 40,
+			"numberOfFactory": 898,
+			"pollutionLevel": 35,
+			"mainFactor": 775,
+			"mainSector": "automotive"
+		},
+		{
+			"provinceID": 41,
+			"numberOfFactory": 920,
+			"pollutionLevel": 38,
+			"mainFactor": -720,
+			"mainSector": "textile"
+		},
+		{
+			"provinceID": 42,
+			"numberOfFactory": 1664,
+			"pollutionLevel": 64,
+			"mainFactor": -650,
+			"mainSector": "mining"
+		},
+		{
+			"provinceID": 43,
+			"numberOfFactory": 1520,
+			"pollutionLevel": 44,
+			"mainFactor": 1069,
+			"mainSector": "mining"
+		},
+		{
+			"provinceID": 44,
+			"numberOfFactory": 1929,
+			"pollutionLevel": 52,
+			"mainFactor": 1069,
+			"mainSector": "mining"
+		},
+		{
+			"provinceID": 45,
+			"numberOfFactory": 1215,
+			"pollutionLevel": 13,
+			"mainFactor": -911,
+			"mainSector": "automotive"
+		},
+		{
+			"provinceID": 46,
+			"numberOfFactory": 373,
+			"pollutionLevel": 41,
+			"mainFactor": -85,
+			"mainSector": "construction"
+		},
+		{
+			"provinceID": 47,
+			"numberOfFactory": 499,
+			"pollutionLevel": 45,
+			"mainFactor": -169,
+			"mainSector": "energy"
+		},
+		{
+			"provinceID": 48,
+			"numberOfFactory": 1818,
+			"pollutionLevel": 11,
+			"mainFactor": 185,
+			"mainSector": "energy"
+		},
+		{
+			"provinceID": 49,
+			"numberOfFactory": 1168,
+			"pollutionLevel": 37,
+			"mainFactor": -67,
+			"mainSector": "pharmaceuticals"
+		},
+		{
+			"provinceID": 50,
+			"numberOfFactory": 1784,
+			"pollutionLevel": 3,
+			"mainFactor": 1334,
+			"mainSector": "food"
+		},
+		{
+			"provinceID": 51,
+			"numberOfFactory": 1321,
+			"pollutionLevel": 46,
+			"mainFactor": 225,
+			"mainSector": "beer"
+		},
+		{
+			"provinceID": 52,
+			"numberOfFactory": 1247,
+			"pollutionLevel": 12,
+			"mainFactor": 1014,
+			"mainSector": "electronics"
+		},
+		{
+			"provinceID": 53,
+			"numberOfFactory": 1443,
+			"pollutionLevel": 59,
+			"mainFactor": 1007,
+			"mainSector": "beer"
+		},
+		{
+			"provinceID": 54,
+			"numberOfFactory": 1894,
+			"pollutionLevel": 10,
+			"mainFactor": 1405,
+			"mainSector": "car"
+		},
+		{
+			"provinceID": 55,
+			"numberOfFactory": 1322,
+			"pollutionLevel": 4,
+			"mainFactor": 1044,
+			"mainSector": "automotive"
+		},
+		{
+			"provinceID": 56,
+			"numberOfFactory": 1376,
+			"pollutionLevel": 20,
+			"mainFactor": 1345,
+			"mainSector": "textile"
+		},
+		{
+			"provinceID": 57,
+			"numberOfFactory": 1358,
+			"pollutionLevel": 67,
+			"mainFactor": 1186,
+			"mainSector": "pharmaceuticals"
+		},
+		{
+			"provinceID": 58,
+			"numberOfFactory": 1447,
+			"pollutionLevel": 47,
+			"mainFactor": 1142,
+			"mainSector": "beer"
+		},
+		{
+			"provinceID": 59,
+			"numberOfFactory": 1211,
+			"pollutionLevel": 34,
+			"mainFactor": 1160,
+			"mainSector": "electronics"
+		},
+		{
+			"provinceID": 60,
+			"numberOfFactory": 1123,
+			"pollutionLevel": 30,
+			"mainFactor": 1005,
+			"mainSector": "construction"
+		},
+		{
+			"provinceID": 61,
+			"numberOfFactory": 1532,
+			"pollutionLevel": 27,
+			"mainFactor": 1320,
+			"mainSector": "beer"
+		},
+		{
+			"provinceID": 62,
+			"numberOfFactory": 1102,
+			"pollutionLevel": 19,
+			"mainFactor": 1011,
+			"mainSector": "car"
+		}
+	],
+	"weeklyReport": [
+		{
+			"date": "24/04/2025",
+			"totalInfected": 98500,
+			"totalDeaths": 2950,
+			"totalRecovered": 16950
+		},
+		{
+			"date": "25/04/2025",
+			"totalInfected": 101200,
+			"totalDeaths": 1600,
+			"totalRecovered": 49600
+		},
+		{
+			"date": "26/04/2025",
+			"totalInfected": 80800,
+			"totalDeaths": 1635,
+			"totalRecovered": 50165
+		},
+		{
+			"date": "27/04/2025",
+			"totalInfected": 40900,
+			"totalDeaths": 1060,
+			"totalRecovered": 80240
+		},
+		{
+			"date": "28/04/2025",
+			"totalInfected": 20500,
+			"totalDeaths": 1680,
+			"totalRecovered": 105820
+		},
+		{
+			"date": "29/04/2025",
+			"totalInfected": 23900,
+			"totalDeaths": 1700,
+			"totalRecovered": 50200
+		},
+		{
+			"date": "30/04/2025",
+			"totalInfected": 9984,
+			"totalDeaths": 1718,
+			"totalRecovered": 108266
+		}
+	],
+	"vaccineReport": {
+		"firstDose": 35389430,
+		"secondDose": 45500695,
+		"noDose": 20222531
+	}
+}
