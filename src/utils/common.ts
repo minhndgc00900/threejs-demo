@@ -1,4 +1,7 @@
+import { LightingEffect, ScenegraphLayer } from "deck.gl";
 import { Color } from "./colors";
+import { useControl } from "react-map-gl/mapbox";
+import { MapboxOverlay as DeckOverlay } from "@deck.gl/mapbox";
 
 export const getPollutionLevel = (density: number) => {
     if (density < 20) return "low";
@@ -60,4 +63,14 @@ export const generateTwoDayHistory = () => {
       });
     }
     return history;
+  };
+
+export const DeckGLOverlay = (props: {
+    layers: ScenegraphLayer[];
+    effects: LightingEffect[];
+    controller: boolean;
+  }) => {
+    const overlay = useControl(() => new DeckOverlay(props));
+    overlay.setProps(props);
+    return null;
   };

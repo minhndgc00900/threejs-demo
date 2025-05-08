@@ -3,17 +3,16 @@ import {
   LightingEffect,
   _SunLight as SunLight,
 } from "@deck.gl/core";
-import { MapboxOverlay as DeckOverlay } from "@deck.gl/mapbox";
 import { MapViewState, PickingInfo, ScenegraphLayer } from "deck.gl";
 import { useCallback, useEffect, useState } from "react";
 import {
   GeolocateControl,
   Map,
-  useControl,
   ViewStateChangeEvent,
 } from "react-map-gl/mapbox";
 import { MAPBOX_ACCESS_TOKEN } from "../../../../utils/constant";
 import { Factory } from "../../../dashboard/dashboard.type";
+import { DeckGLOverlay, getColorByPollution } from "../../../../utils/common";
 
 // import Tooltip from "../../../dashboard/components/Tooltip";
 
@@ -27,16 +26,6 @@ const INITIAL_VIEW_STATE: MapViewState = {
   zoom: 12,
   pitch: 45,
   bearing: 0,
-};
-
-const DeckGLOverlay = (props: {
-  layers: ScenegraphLayer[];
-  effects: LightingEffect[];
-  controller: boolean;
-}) => {
-  const overlay = useControl(() => new DeckOverlay(props));
-  overlay.setProps(props);
-  return null;
 };
 
 export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factory }) => {
@@ -90,38 +79,18 @@ export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factory }) => {
               setHoverInfo(null);
             }
           },
+          updateTriggers: {
+            getColor: [building.pollutionLevel]
+          },
+          getColor: (d) => {
+            return getColorByPollution(d.pollutionLevel) as [number, number, number];
+            // return colors[d.pollutionLevel as keyof typeof colors] || colors.low;
+          }
         })
       }
        
     );
   };
-
-  // const layers = [
-  //   new ColumnLayer<Factory>({
-  //     id: "column-layer",
-  //     data: [factory],
-  //     diskResolution: 12,
-  //     radius: 700,
-  //     extruded: true,
-  //     elevationScale: 50,
-  //     getPosition: (d) => [d.longitude, d.latitude],
-  //     getElevation: (d) => d.populationDensity,
-  //     getFillColor: (d) => getColorByPollution(d.pollutionLevel) as [number, number, number],
-  //     pickable: true,
-  //     onHover: (info) => {
-  //       if (info.object) {
-  //         setHoverInfo(info);
-  //       } else {
-  //         // Check if mouse is over the tooltip
-  //         const tooltip = document.getElementById("custom-tooltip");
-  //         if (!tooltip?.matches(":hover")) {
-  //           setHoverInfo(null);
-  //           setInitialPosition(null);
-  //         }
-  //       }
-  //     },
-  //   }),
-  // ];
 
   useEffect(() => {
     if (hoverInfo && !initialPosition) {
@@ -134,12 +103,6 @@ export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factory }) => {
 
   return (
     <div className="section-container">
-      {/* <DeckGL
-        initialViewState={INITIAL_VIEW_STATE}
-        layers={layers}
-        controller={true}
-        style={{ width: '472px', height: '360px' }}
-      > */}
       <Map
         onMove={onMove}
         mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
@@ -190,23 +153,6 @@ export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factory }) => {
         />
         <GeolocateControl position="top-right" />
       </Map>
-      {/* {hoverInfo?.object && (
-        <div 
-          id="custom-tooltip"
-          style={{ 
-            left: initialPosition?.x ?? hoverInfo.x, 
-            top: initialPosition?.y ?? hoverInfo.y 
-          }} 
-          onMouseLeave={() => {
-            setHoverInfo(null);
-            setInitialPosition(null);
-          }}
-          className="absolute z-1 pointer-events-auto bg-[rgba(255,255,255,0.95)] text-[#333] shadow-[0px_2px_10px_rgba(0,0,0,0.15)] max-w-[290px] p-2 rounded-md"
-        >
-          <Tooltip object={hoverInfo.object} />
-        </div>
-      )} */}
-      {/* </DeckGL> */}
     </div>
   );
 };
