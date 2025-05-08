@@ -181,6 +181,7 @@ export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factories }) => {
           style={{
             left: initialPosition?.x ?? hoverInfo.x,
             top: initialPosition?.y ?? hoverInfo.y,
+            zIndex: 1000,
           }}
           onMouseLeave={() => {
             setHoverInfo(null);
