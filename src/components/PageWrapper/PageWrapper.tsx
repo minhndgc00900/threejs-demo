@@ -71,7 +71,7 @@ const PageWrapper = () => {
             })}
           </div>
         </div>
-        <div className="mt-[100px]">
+        <div className="mt-[63px]">
           <Outlet />
         </div>
       </div>

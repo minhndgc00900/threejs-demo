@@ -1,6 +1,10 @@
 import { MapViewState, PickingInfo, ScenegraphLayer } from "deck.gl";
 import { useCallback, useState, useEffect } from "react";
-import { GeolocateControl, Map, ViewStateChangeEvent } from "react-map-gl/mapbox";
+import {
+  GeolocateControl,
+  Map,
+  ViewStateChangeEvent,
+} from "react-map-gl/mapbox";
 import { MAPBOX_ACCESS_TOKEN } from "@utils/constant";
 import type { Factory } from "@pages/dashboard/dashboard.type";
 import Tooltip from "../Tooltip";
@@ -26,6 +30,7 @@ const INITIAL_VIEW_STATE: MapViewState = {
 
 export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factories }) => {
   const [hoverInfo, setHoverInfo] = useState<PickingInfo<Factory> | null>(null);
+  const [isMapLoaded, setIsMapLoaded] = useState(false);
   const [initialPosition, setInitialPosition] = useState<{
     x: number;
     y: number;
@@ -34,34 +39,6 @@ export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factories }) => {
   const onMove = useCallback(({ viewState }: ViewStateChangeEvent) => {
     console.log("viewState", viewState);
   }, []);
-
-  // const layers = [
-  //   new ColumnLayer<Factory>({
-  //     id: "column-layer",
-  //     data: factories,
-  //     diskResolution: 12,
-  //     radius: 700,
-  //     extruded: true,
-  //     elevationScale: 50,
-  //     getPosition: (d) => [d.longitude, d.latitude],
-  //     getElevation: (d) => d.populationDensity,
-  //     getFillColor: (d) =>
-  //       getColorByPollution(d.pollutionLevel) as [number, number, number],
-  //     pickable: true,
-  //     onHover: (info) => {
-  //       if (info.object) {
-  //         setHoverInfo(info);
-  //       } else {
-  //         // Check if mouse is over the tooltip
-  //         const tooltip = document.getElementById("custom-tooltip");
-  //         if (!tooltip?.matches(":hover")) {
-  //           setHoverInfo(null);
-  //           setInitialPosition(null);
-  //         }
-  //       }
-  //     },
-  //   }),
-  // ];
 
   useEffect(() => {
     if (hoverInfo && !initialPosition) {
@@ -128,71 +105,79 @@ export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factories }) => {
   };
 
   return (
-    <Map
-      onMove={onMove}
-      mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
-      initialViewState={INITIAL_VIEW_STATE}
-      style={{ height: "100vh", width: "100%" }}
-      mapStyle="mapbox://styles/mapbox/light-v9"
-      onLoad={(event) => {
-        const map = event.target;
-        map.addLayer({
-          id: "3d-buildings",
-          source: "composite",
-          "source-layer": "building",
-          filter: ["==", "extrude", "true"],
-          type: "fill-extrusion",
-          minzoom: 15,
-          paint: {
-            "fill-extrusion-color": "#aaa",
-            "fill-extrusion-height": [
-              "interpolate",
-              ["linear"],
-              ["zoom"],
-              15,
-              0,
-              15.05,
-              ["get", "height"],
-            ],
-            "fill-extrusion-base": [
-              "interpolate",
-              ["linear"],
-              ["zoom"],
-              15,
-              0,
-              15.05,
-              ["get", "min_height"],
-            ],
-            "fill-extrusion-opacity": 0.6,
-          },
-        });
-      }}
-    >
-      <DeckGLOverlay
-        layers={createBuildingLayers()}
-        effects={[lightingEffect]}
-        controller
-      />
-      <GeolocateControl position="top-right" />
-
-      {hoverInfo?.object && (
-        <div
-          id="custom-tooltip"
-          style={{
-            left: initialPosition?.x ?? hoverInfo.x,
-            top: initialPosition?.y ?? hoverInfo.y,
-            zIndex: 1000,
-          }}
-          onMouseLeave={() => {
-            setHoverInfo(null);
-            setInitialPosition(null);
-          }}
-          className="absolute z-1 pointer-events-auto bg-[rgba(255,255,255,0.95)] text-[#333] shadow-[0px_2px_10px_rgba(0,0,0,0.15)] max-w-[290px] p-2 rounded-md"
-        >
-          <Tooltip object={hoverInfo.object} />
+    <>
+      {!isMapLoaded && (
+        <div className="absolute z-[2000] w-full h-full flex justify-center items-center text-2xl left-0 top-0 bg-black opacity-[0.8]">
+          <img width={100} height={100} src='https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca.gif' />
         </div>
       )}
-    </Map>
+      <Map
+        onMove={onMove}
+        mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
+        initialViewState={INITIAL_VIEW_STATE}
+        style={{ height: "100vh", width: "100%" }}
+        mapStyle="mapbox://styles/mapbox/light-v9"
+        onLoad={(event) => {
+          setIsMapLoaded(true);
+          const map = event.target;
+          map.addLayer({
+            id: "3d-buildings",
+            source: "composite",
+            "source-layer": "building",
+            filter: ["==", "extrude", "true"],
+            type: "fill-extrusion",
+            minzoom: 15,
+            paint: {
+              "fill-extrusion-color": "#aaa",
+              "fill-extrusion-height": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                15,
+                0,
+                15.05,
+                ["get", "height"],
+              ],
+              "fill-extrusion-base": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                15,
+                0,
+                15.05,
+                ["get", "min_height"],
+              ],
+              "fill-extrusion-opacity": 0.6,
+            },
+          });
+        }}
+      >
+        <DeckGLOverlay
+          layers={createBuildingLayers()}
+          effects={[lightingEffect]}
+          controller
+        />
+        <GeolocateControl position="top-right" />
+
+        {hoverInfo?.object && (
+          <div
+            id="custom-tooltip"
+            style={{
+              left: initialPosition?.x ?? hoverInfo.x,
+              top: initialPosition?.y ?? hoverInfo.y,
+              zIndex: 1000,
+            }}
+            onMouseLeave={() => {
+              setHoverInfo(null);
+              setInitialPosition(null);
+            }}
+            className="absolute z-1 pointer-events-auto bg-[rgba(255,255,255,0.95)] text-[#333] shadow-[0px_2px_10px_rgba(0,0,0,0.15)] max-w-[290px] p-2 rounded-md"
+          >
+            <Tooltip object={hoverInfo.object} />
+          </div>
+        )}
+      </Map>
+    </>
   );
 };
 
