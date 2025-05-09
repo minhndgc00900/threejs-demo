@@ -34,7 +34,7 @@ const Visualisation = () => {
         </Suspense>
       </Canvas>
       <div
-        className="absolute left-5 top-5 z-[1000]"
+        className="absolute left-5 top-[80px] z-[50]"
         data-aos="fade-right"
         data-aos-easing="ease-out-back"
         data-aos-duration="1000"

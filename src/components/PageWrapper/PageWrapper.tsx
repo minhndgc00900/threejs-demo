@@ -1,25 +1,51 @@
 // import { DrawerSection } from '@/src/components/Drawer/Drawer.types';
-import { Outlet } from "react-router-dom";
-import Sidebar from "../Sidebar";
+import { Link, Outlet } from "react-router-dom";
+import { DrawerSection } from "../Sidebar/Sidebar.types";
+import { useMemo } from "react";
+import Icon from "../Icon";
 
 const PageWrapper = () => {
-
+  const menu: DrawerSection[] = useMemo(() => {
+    return [
+      {
+        name: "Dashboard",
+        iconName: "dashboard",
+        url: "/dashboard",
+      },
+      {
+        name: "Visualisation",
+        iconName: "location",
+        url: "/visualisation",
+      },
+    ];
+  }, []);
   return (
     <div className="flex h-screen bg-gray-100">
-      <Sidebar />
+      {/* <Sidebar /> */}
 
       {/* Main content */}
       <div className="flex flex-col flex-1 overflow-y-auto">
-        <div className="flex items-center justify-between h-16 bg-white border-b border-gray-200">
-          <div className="flex items-center px-4">
+        <div className="flex items-center justify-between h-16 bg-gray-800 border-b border-gray-200 fixed z-[90] w-[100vw]">
+          <div className="flex items-center px-4 h-[100px] w-[80vw] mx-auto">
             <input
-              className="mx-4 w-full border rounded-md px-4 py-2"
+              className="mx-4 w-full border rounded-md px-4 py-2 bg-[#fff]"
               type="text"
               placeholder="Search"
             />
+            {menu.map((section, index) => {
+              return (
+                <Link key={index}
+                  to={section.url}
+                  className="flex items-center px-4 py-2 text-gray-100 hover:bg-gray-700 gap-x-2 gap-y-10"
+                >
+                  <Icon name={section.iconName} color="#fff" />
+                  <span className="text-white">{section.name}</span>
+                </Link>
+              );
+            })}
           </div>
         </div>
-        <div>
+        <div className="mt-[100px]">
           <Outlet />
         </div>
       </div>

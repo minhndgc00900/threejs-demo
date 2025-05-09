@@ -132,7 +132,7 @@ export const Factory3DMap: React.FC<Factory3DMapProps> = ({ factories }) => {
       onMove={onMove}
       mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
       initialViewState={INITIAL_VIEW_STATE}
-      style={{ height: "95vh", width: "100%" }}
+      style={{ height: "100vh", width: "100%" }}
       mapStyle="mapbox://styles/mapbox/light-v9"
       onLoad={(event) => {
         const map = event.target;
