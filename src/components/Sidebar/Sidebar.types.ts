@@ -1,4 +1,4 @@
-import { IconNames } from "../Icon/Icon.types";
+import { IconNames } from "@components/Icon/Icon.types";
 
 export interface MenuItem {
 	icon?: IconNames;

@@ -1,5 +1,5 @@
 import { SVGProps } from 'react';
-import { IconSvgOwnProps } from '../Icon.types';
+import { IconSvgOwnProps } from '@components/Icon/Icon.types';
 
 const Dashboard = ({ sx: { width, height } }: SVGProps<SVGSVGElement> & IconSvgOwnProps) => (
 	<svg

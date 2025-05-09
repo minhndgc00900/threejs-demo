@@ -1,6 +1,6 @@
 // utils/generateCalendarHeatmap.ts
 import * as d3 from 'd3';
-import { Color } from '../../../utils/colors';
+import { Color } from '@utils/colors';
 
 type Point = { date: Date; value: number };
 

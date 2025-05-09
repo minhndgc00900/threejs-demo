@@ -2,9 +2,9 @@ import { useRef, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 
 import "mapbox-gl/dist/mapbox-gl.css";
-import { MAPBOX_ACCESS_TOKEN } from "../../utils/constant";
+import { MAPBOX_ACCESS_TOKEN } from "@utils/constant";
 import Factory3DMap from "./components/Factory3DMap";
-import { factories } from "../../utils/factory";
+import { factories } from "@utils/factory";
 
 const Dashboard = () => {
   const mapRef = useRef<mapboxgl.Map | null>(null);

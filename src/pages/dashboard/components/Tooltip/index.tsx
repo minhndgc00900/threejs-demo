@@ -1,12 +1,8 @@
 import { useMemo } from "react";
-import { Factory } from "../../dashboard.type";
-import {
-  getBgColorByPollutionLevel,
-  getIconByPollutionLevel,
-  getTextByPollutionLevel,
-} from "../../utils";
-import { generateCalendarHeatmapSVG } from "../../utils/calendarSvg";
+import { Factory } from "@pages/dashboard/dashboard.type";
 import { useNavigate } from "react-router";
+import { generateCalendarHeatmapSVG } from "@pages/dashboard/utils/calendarSvg";
+import { getBgColorByPollutionLevel, getIconByPollutionLevel, getTextByPollutionLevel } from "@utils/pollution";
 
 interface TooltipProps {
   object: Factory;

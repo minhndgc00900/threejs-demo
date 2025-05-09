@@ -1,7 +1,7 @@
-import Moderate from "../../../components/Icon/assets/Moderate";
-import Sad from "../../../components/Icon/assets/Sad";
-import Smile from "../../../components/Icon/assets/Smile";
-import { Color } from "../../../utils/colors";
+import Moderate from "@components/Icon/assets/Moderate";
+import Sad from "@components/Icon/assets/Sad";
+import Smile from "@components/Icon/assets/Smile";
+import { Color } from "@utils/colors";
 
 export const getBgColorByPollutionLevel = (pollutionLevel: number): string => {
   if (pollutionLevel < 20) return Color.GOOD; // Low - Green

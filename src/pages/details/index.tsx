@@ -1,9 +1,9 @@
 import { useParams } from "react-router";
 import { Factory3DMap } from "./components/Factory3DMap";
-import { factories } from "../../utils/factory";
-import { Factory } from "../dashboard/dashboard.type";
+import { factories } from "@utils/factory";
+import { Factory } from "@pages/dashboard/dashboard.type";
 import FactoryStatus from "./components/FactoryStatus";
-import Piechart from "../../components/Piechart";
+import Piechart from "@components/Piechart";
 
 const Details = () => {
   const { id } = useParams();

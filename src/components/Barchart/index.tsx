@@ -4,8 +4,8 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { isEmpty } from "lodash";
 import { useRef, useState } from "react";
 import * as THREE from "three";
-import { History } from "../../types";
-import { formatDate, getColorByPollution } from "../../utils/common";
+import { formatDate, getColorByPollution } from "@utils/common";
+import { History } from "@/types";
 
 const Bar = ({
   height,

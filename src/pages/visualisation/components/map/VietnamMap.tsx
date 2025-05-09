@@ -5,10 +5,10 @@ import * as THREE from "three";
 import Province from "./Province";
 import CameraControl from "./CameraControl";
 import Lights from "./Lights";
-import { getProvince } from "../../../../utils/map";
-import { generateColor } from "../../../../utils/map";
-import { getProvinceData } from "../../../../utils/map";
-import mockData from "../../../../data/mockData.json";
+import { getProvince } from "@utils/map";
+import { generateColor } from "@utils/map";
+import { getProvinceData } from "@utils/map";
+import mockData from "@data/mockData.json";
 // import { GroupProps } from "@react-three/fiber";
 
 type MyComponentProps = JSX.IntrinsicElements['group'];

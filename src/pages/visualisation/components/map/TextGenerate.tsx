@@ -2,7 +2,7 @@ import { Text } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import * as THREE from "three";
-import useMapStore from "../../../../stores/useMapStore";
+import useMapStore from "@stores/useMapStore";
 
 interface TextGenerateProps {
 	text: React.ReactNode;

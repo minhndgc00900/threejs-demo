@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { create } from "zustand";
-import { GlobalCameraPosition, InitialCameraPosition } from "../utils/constant";
+import { GlobalCameraPosition, InitialCameraPosition } from "@utils/constant";
 import { CameraProps } from "@react-three/fiber";
 
 interface MapState {

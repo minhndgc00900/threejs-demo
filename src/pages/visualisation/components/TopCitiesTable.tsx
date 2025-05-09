@@ -1,4 +1,4 @@
-import { TopProvinceData } from "../../../utils/map";
+import { TopProvinceData } from "@utils/map";
 import PollutionBarChart from "./PollutionBarChart";
 
 interface TopCitiesTableProps {

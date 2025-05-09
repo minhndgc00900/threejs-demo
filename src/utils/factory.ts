@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
-import { Factory } from "../pages/dashboard/dashboard.type";
-import { generateTwoDayHistory } from './common';
+import { Factory } from "@pages/dashboard/dashboard.type";
+import { generateTwoDayHistory } from "@utils/common";
 
 
 const today = new Date();

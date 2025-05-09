@@ -1,4 +1,4 @@
-import { getColorByPollution } from "../../../utils/common";
+import { getColorByPollution } from "@utils/common";
 
 const Legend = () => {
   const pollutionLevels = [

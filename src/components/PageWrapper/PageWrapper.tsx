@@ -1,10 +1,10 @@
 // import { DrawerSection } from '@/src/components/Drawer/Drawer.types';
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import { DrawerSection } from "../Sidebar/Sidebar.types";
+import { DrawerSection } from "@components/Sidebar/Sidebar.types";
 import { useMemo } from "react";
-import Icon from "../Icon";
+import Icon from "@components/Icon";
 import Select from 'react-select';
-import { factories } from "../../utils/factory";
+import { factories } from "@utils/factory";
 
 const PageWrapper = () => {
   const navigate = useNavigate();

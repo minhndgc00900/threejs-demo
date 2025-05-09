@@ -1,5 +1,5 @@
 import { SVGProps } from 'react';
-import { IconSvgOwnProps } from '../Icon.types';
+import { IconSvgOwnProps } from '@components/Icon/Icon.types';
 
 const Location = ({ sx: { width, height } }: SVGProps<SVGSVGElement> & IconSvgOwnProps) => (
 	<svg width={width} height={height} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

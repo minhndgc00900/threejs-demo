@@ -4,9 +4,9 @@ import VietnamMap from "./components/map/VietnamMap";
 import ProvinceDataTable from "./components/ProvinceDataTable";
 import TopCitiesTable from "./components/TopCitiesTable";
 import Legend from "./components/Legend";
-import { getTopProvincesByPollutionLevel } from "../../utils/map";
-import mockData from "../../data/mockData.json";
-import useMapStore from "../../stores/useMapStore";
+import { getTopProvincesByPollutionLevel } from "@utils/map";
+import mockData from "@data/mockData.json";
+import useMapStore from "@stores/useMapStore";
 
 const Visualisation = () => {
   const top10MostPollutedProvinces = getTopProvincesByPollutionLevel({

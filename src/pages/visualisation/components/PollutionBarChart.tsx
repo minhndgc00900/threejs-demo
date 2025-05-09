@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import { TopProvinceData } from '../../../utils/map';
-import { formatProvinceName, normalText } from '../../../utils/map';
-import { getColorByPollution } from '../../../utils/common';
-import useMapStore from '../../../stores/useMapStore';
+import { TopProvinceData } from '@utils/map';
+import { formatProvinceName, normalText } from '@utils/map';
+import { getColorByPollution } from '@utils/common';
+import useMapStore from '@stores/useMapStore';
 
 interface BarChartProps {
   data: TopProvinceData[];

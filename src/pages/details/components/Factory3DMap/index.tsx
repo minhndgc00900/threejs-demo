@@ -10,9 +10,9 @@ import {
   Map,
   ViewStateChangeEvent,
 } from "react-map-gl/mapbox";
-import { MAPBOX_ACCESS_TOKEN } from "../../../../utils/constant";
-import { Factory } from "../../../dashboard/dashboard.type";
-import { DeckGLOverlay, getColorByPollution } from "../../../../utils/common";
+import { MAPBOX_ACCESS_TOKEN } from "@utils/constant";
+import { Factory } from "@pages/dashboard/dashboard.type";
+import { DeckGLOverlay, getColorByPollution } from "@utils/common";
 
 // import Tooltip from "../../../dashboard/components/Tooltip";
 

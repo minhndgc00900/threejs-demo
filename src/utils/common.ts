@@ -1,8 +1,8 @@
 import { LightingEffect, ScenegraphLayer } from "deck.gl";
-import { Color } from "./colors";
+import { Color } from "@utils/colors";
 import { useControl } from "react-map-gl/mapbox";
 import { MapboxOverlay as DeckOverlay } from "@deck.gl/mapbox";
-import { TopProvinceData } from "../types";
+import { TopProvinceData } from "@/types";
 
 export const getPollutionLevel = (density: number) => {
     if (density < 20) return "low";

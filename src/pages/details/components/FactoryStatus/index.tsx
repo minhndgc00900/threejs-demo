@@ -1,9 +1,9 @@
-import BarChart from "../../../../components/Barchart";
+import BarChart from "@components/Barchart";
 import {
   getColorByPollution,
   getPollutionLevelDetail,
-} from "../../../../utils/common";
-import { Factory } from "../../../dashboard/dashboard.type";
+} from "@utils/common";
+import { Factory } from "@pages/dashboard/dashboard.type";
 
 interface FactoryStatusProps {
   factory: Factory;

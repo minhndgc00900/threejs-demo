@@ -3,7 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { isEmpty } from "lodash";
 import { useMemo, useRef, useState } from "react";
 import * as THREE from "three";
-import { Factory } from "../../pages/dashboard/dashboard.type";
+import { Factory } from "@pages/dashboard/dashboard.type";
 
 function getExplodeOffset(
   startAngle: number,
@@ -52,7 +52,7 @@ function PieSlice({
   };
 
   // Explode offset
-  const [offsetX, offsetY] = getExplodeOffset(startAngle, endAngle, explode);
+  const [offsetX = 0, offsetY = 0] = getExplodeOffset(startAngle, endAngle, explode);
 
   // Animation
   useFrame(() => {

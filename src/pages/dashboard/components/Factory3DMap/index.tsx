@@ -1,10 +1,10 @@
 import { MapViewState, PickingInfo, ScenegraphLayer } from "deck.gl";
 import { useCallback, useState, useEffect } from "react";
 import { GeolocateControl, Map, ViewStateChangeEvent } from "react-map-gl/mapbox";
-import { MAPBOX_ACCESS_TOKEN } from "../../../../utils/constant";
-import type { Factory } from "../../dashboard.type";
+import { MAPBOX_ACCESS_TOKEN } from "@utils/constant";
+import type { Factory } from "@pages/dashboard/dashboard.type";
 import Tooltip from "../Tooltip";
-import { DeckGLOverlay, getColorByPollution } from "../../../../utils/common";
+import { DeckGLOverlay, getColorByPollution } from "@utils/common";
 
 import {
   AmbientLight,

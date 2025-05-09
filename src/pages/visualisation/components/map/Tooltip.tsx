@@ -2,7 +2,7 @@ import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import * as THREE from "three";
 import { Text } from "@react-three/drei";
-import { ProvinceData } from "../../../../utils/common";
+import { ProvinceData } from "@utils/common";
 
 interface TooltipProps {
   position: THREE.Vector3;

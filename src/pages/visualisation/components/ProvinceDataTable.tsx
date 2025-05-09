@@ -1,8 +1,8 @@
-import { getTopProvincesByCases } from "../../../utils/common";
-import mockData from "../../../data/mockData.json";
-import useMapStore from "../../../stores/useMapStore";
-import { formatProvinceName } from "../../../utils/map";
-import { normalText } from "../../../utils/map";
+import { getTopProvincesByCases } from "@utils/common";
+import mockData from "@data/mockData.json";
+import useMapStore from "@stores/useMapStore";
+import { formatProvinceName } from "@utils/map";
+import { normalText } from "@utils/map";
 
 const ProvinceDataTable = () => {
 	const setCameraPosition = useMapStore((state) => state.setCameraPosition);

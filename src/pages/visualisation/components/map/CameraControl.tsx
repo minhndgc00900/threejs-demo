@@ -2,7 +2,7 @@
 import { useFrame } from "@react-three/fiber";
 import { useState } from "react";
 import * as THREE from "three";
-import useMapStore from "../../../../stores/useMapStore";
+import useMapStore from "@stores/useMapStore";
 
 const CameraControl = () => {
 	const activeMesh = useMapStore((state) => state.activeMesh);

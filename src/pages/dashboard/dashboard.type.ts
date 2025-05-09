@@ -1,4 +1,4 @@
-import { History } from "../../types";
+import { History } from "@/types";
 
 export interface PollutionStatistics {
   type: string;
