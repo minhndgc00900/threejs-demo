@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import VietnamMap from "./components/map/VietnamMap";
 import ProvinceDataTable from "./components/ProvinceDataTable";
 import TopCitiesTable from "./components/TopCitiesTable";
-// import PollutionBarChart from "./components/PollutionBarChart";
+import Legend from "./components/Legend";
 import { getTopProvincesByPollutionLevel } from "../../utils/map";
 import mockData from "../../data/mockData.json";
 import useMapStore from "../../stores/useMapStore";
@@ -39,6 +39,9 @@ const Visualisation = () => {
         data-aos-duration="1000"
       >
         <ProvinceDataTable />
+      </div>
+      <div className="absolute left-1/2 translate-x-[-50%] top-[80px] z-[1000]">
+        <Legend />
       </div>
       <div className="absolute -right-[170px] top-1/2 translate-y-[-50%] z-[1000] uppercase">
         <div
