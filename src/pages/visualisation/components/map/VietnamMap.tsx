@@ -16,7 +16,7 @@ type MyComponentProps = JSX.IntrinsicElements['group'];
 const VietnamMap = (props: MyComponentProps) => {
 	const mapRef = useRef<THREE.Group>(null);
 	const { scene } = useGLTF("/models/map.gltf");
-
+	
 	const Provinces = () => {
 		const provinces: JSX.Element[] = [];
 		scene.traverse((child) => {

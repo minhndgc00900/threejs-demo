@@ -6,6 +6,7 @@ import TopCitiesTable from "./components/TopCitiesTable";
 // import PollutionBarChart from "./components/PollutionBarChart";
 import { getTopProvincesByPollutionLevel } from "../../utils/map";
 import mockData from "../../data/mockData.json";
+import useMapStore from "../../stores/useMapStore";
 
 const Visualisation = () => {
   const top10MostPollutedProvinces = getTopProvincesByPollutionLevel({
@@ -18,14 +19,12 @@ const Visualisation = () => {
     pageSize: 10,
     ascending: true,
   });
+	const { globalCameraPosition } = useMapStore();
 
   return (
     <div className="w-full h-screen">
       <Canvas
-        camera={{
-          position: [0, 59, 36],
-          fov: 45,
-        }}
+        camera={globalCameraPosition}
         dpr={[1, 1.5]}
         shadows
       >
@@ -41,7 +40,7 @@ const Visualisation = () => {
       >
         <ProvinceDataTable />
       </div>
-      <div className="absolute -right-[220px] top-1/2 translate-y-[-50%] z-[1000] uppercase">
+      <div className="absolute -right-[170px] top-1/2 translate-y-[-50%] z-[1000] uppercase">
         <div
           data-aos="fade-left"
           data-aos-easing="ease-out-back"

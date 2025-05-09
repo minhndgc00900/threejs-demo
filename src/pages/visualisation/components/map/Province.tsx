@@ -2,6 +2,7 @@ import { useFrame, Vector3 } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import * as THREE from "three";
 import TextGenerate from "./TextGenerate";
+import Tooltip from "./Tooltip";
 import useMapStore from "../../../../stores/useMapStore";
 import useColorFilterStore from "../../../../stores/useColorFilterStore";
 import { useCursorPointer } from "../../../../hooks/useCursorPointer";
@@ -17,7 +18,6 @@ export interface ProvinceProps {
 	geometry: BufferGeometry;
 }
 
-
 const Province = ({
 	name,
 	color,
@@ -29,8 +29,12 @@ const Province = ({
 	const [hovered, setHovered] = useState<boolean>(false);
 	const setCameraPosition = useMapStore((state) => state.setCameraPosition);
 	const activeMesh = useMapStore((state) => state.activeMesh);
+	const { cameraPosition, resetCamera, resetGlobalCamera } = useMapStore();
 	const { activeFilter } = useColorFilterStore();
-
+	console.log(2222,activeMesh);
+	console.log(22222,provinceRef.current?.name);
+	console.log(22222,cameraPosition);
+	
 	useCursorPointer(hovered);
 
 	useFrame(() => {
@@ -55,7 +59,13 @@ const Province = ({
 			ref={provinceRef}
 			name={name || undefined}
 			onClick={() => {
-				setCameraPosition({ activeMesh: name });
+				if(activeMesh === provinceRef.current?.name){
+					resetCamera()
+					setCameraPosition({ activeMesh: null });
+					resetGlobalCamera();
+				}else{
+					setCameraPosition({ activeMesh: name });
+				}
 			}}
 			onPointerOver={() => setHovered(true)}
 			onPointerOut={() => setHovered(false)}
@@ -69,16 +79,10 @@ const Province = ({
 				hovered={hovered}
 				color="#ffffff"
 			/>
-			<TextGenerate
-				name={name || ""}
-				color={"#111"}
-				animate
-				position={new THREE.Vector3(0, 0.01, -0.05)}
-				text={`Number of factory: ${provinceData.numberOfFactory}
-				Pollution level: ${provinceData.pollutionLevel}
-				Main sector: ${provinceData.mainSector}`}
-				hovered={hovered}
-				textAlign="left"
+			<Tooltip
+				position={new THREE.Vector3(0, 5, -0.05)}
+				data={provinceData}
+				visible={hovered || activeMesh === name}
 			/>
 			<mesh
 				castShadow

@@ -8,3 +8,16 @@ export const COLOR_THRESHOLDS = [
 	{ threshold: 10, color: "#84CC16" }, // Light green
 	{ threshold: 0, color: "#16A34A" }, // Green
 ] as const;
+
+export enum InitialCameraPosition {
+	X = 1.0959887504577637,
+	Y = 0.005898133385926485,
+	Z = 0.19488362967967987,
+}
+
+export enum GlobalCameraPosition {
+	X = 0,
+	Y = 59,
+	Z = 36,
+}
+

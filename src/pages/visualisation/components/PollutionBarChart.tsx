@@ -34,7 +34,7 @@ const PollutionBarChart = ({
 
     // Create SVG
     const svg = d3.select(svgRef.current)
-      .attr("width", width)
+      .attr("width", width + 38)
       .attr("height", height);
 
     // Create chart group
@@ -113,7 +113,7 @@ const PollutionBarChart = ({
       .attr("dominant-baseline", "middle")
       .style("font-size", "12px")
       .style("cursor", "pointer")
-      .text(d => d.pollutionLevel.toLocaleString())
+      .text(d => d.pollutionLevel.toLocaleString() + " µg/m³")
       .on("click", (_, d) => {
         setCameraPosition({ activeMesh: normalText(d.name) })
       });

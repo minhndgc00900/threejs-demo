@@ -56,7 +56,7 @@ const ProvinceDataTable = () => {
 										{province.numberOfFactory.toLocaleString()}
 									</td>
 									<td className="py-2 px-2 text-right text-[#792884]">
-										{province.pollutionLevel.toLocaleString()}
+										{province.pollutionLevel.toLocaleString()} µg/m³
 									</td>
 								</tr>
 							))}

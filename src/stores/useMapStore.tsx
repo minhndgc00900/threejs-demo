@@ -1,29 +1,48 @@
 import * as THREE from "three";
 import { create } from "zustand";
+import { GlobalCameraPosition, InitialCameraPosition } from "../utils/constant";
+import { CameraProps } from "@react-three/fiber";
 
 interface MapState {
 	cameraPosition: THREE.Vector3;
+	globalCameraPosition: CameraProps;
 	activeMesh?: string | null;
 	setCameraPosition: (payload: { activeMesh?: string | null }) => void;
 	isResetCamera: boolean;
-	resetCamera: (payload: boolean) => void;
+	resetCamera: (payload?: { x?: number, y?: number, z?: number }) => void;
+	resetGlobalCamera: () => void;
 }
 
 const useMapStore = create<MapState>((set) => ({
 	cameraPosition: new THREE.Vector3(
-		1.0959887504577637,
-		0.005898133385926485,
-		0.19488362967967987
+		InitialCameraPosition.X,
+		InitialCameraPosition.Y,
+		InitialCameraPosition.Z
 	),
+	globalCameraPosition: {
+		position: [GlobalCameraPosition.X, GlobalCameraPosition.Y, GlobalCameraPosition.Z],
+		fov: 45,
+	},
 	activeMesh: null,
 	setCameraPosition: (payload) => {
 		set(() => ({
 			activeMesh: payload.activeMesh,
 		}));
 	},
+	
 	isResetCamera: false,
-	resetCamera: (payload) => {
-		set(() => ({ isResetCamera: payload }));
+	resetGlobalCamera: () => {
+		set(() => ({ globalCameraPosition: {
+			position: [GlobalCameraPosition.X, GlobalCameraPosition.Y, GlobalCameraPosition.Z],
+			fov: 45,
+		} }));
+	},
+	resetCamera: () => {
+		set(() => ({ cameraPosition: new THREE.Vector3(
+			InitialCameraPosition.X,
+			InitialCameraPosition.Y,
+			InitialCameraPosition.Z
+		) }));
 	},
 }));
 
