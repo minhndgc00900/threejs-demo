@@ -4,7 +4,7 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { MAPBOX_ACCESS_TOKEN } from "../../utils/constant";
 import Factory3DMap from "./components/Factory3DMap";
-import { factories } from "./constants";
+import { factories } from "../../utils/factory";
 
 const Dashboard = () => {
   const mapRef = useRef<mapboxgl.Map | null>(null);

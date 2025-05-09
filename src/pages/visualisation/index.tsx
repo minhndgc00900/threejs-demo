@@ -40,7 +40,7 @@ const Visualisation = () => {
       >
         <ProvinceDataTable />
       </div>
-      <div className="absolute left-1/2 translate-x-[-50%] top-[80px] z-[1000]">
+      <div className="absolute left-1/2 translate-x-[-50%] top-[80px] z-[1]">
         <Legend />
       </div>
       <div className="absolute -right-[170px] top-1/2 translate-y-[-50%] z-[1000] uppercase">
