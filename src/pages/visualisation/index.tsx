@@ -2,8 +2,8 @@ import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import VietnamMap from "./components/map/VietnamMap";
 import ProvinceDataTable from "./components/ProvinceDataTable";
-import ColorIndicator from "./components/ColorIndicator";
 import TopCitiesTable from "./components/TopCitiesTable";
+// import PollutionBarChart from "./components/PollutionBarChart";
 import { getTopProvincesByPollutionLevel } from "../../utils/map";
 import mockData from "../../data/mockData.json";
 
@@ -41,10 +41,7 @@ const Visualisation = () => {
       >
         <ProvinceDataTable />
       </div>
-      <div className="absolute left-1/2 translate-x-[-50%] top-5 z-[1000]">
-        <ColorIndicator />
-      </div>
-      <div className="absolute right-5 top-1/2 translate-y-[-50%] z-[1000] uppercase">
+      <div className="absolute -right-[220px] top-1/2 translate-y-[-50%] z-[1000] uppercase">
         <div
           data-aos="fade-left"
           data-aos-easing="ease-out-back"

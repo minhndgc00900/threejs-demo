@@ -139,7 +139,7 @@ export const getTopProvincesByCases = ({
             };
         })
         .sort((a: TopProvinceData, b: TopProvinceData) => {
-            return ascending ? a.numberOfFactory - b.numberOfFactory : b.numberOfFactory - a.numberOfFactory;
+            return ascending ? a.pollutionLevel - b.pollutionLevel : b.pollutionLevel - a.pollutionLevel;
         })
         .slice(0, limit);
 };
